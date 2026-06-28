@@ -64,51 +64,34 @@
         <div class="flex items-center gap-4">
           <!-- Logo 3D llamativo con sombras e iluminación bioluminiscente -->
           <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500/25 via-slate-900 to-sky-950/40 border-2 border-teal-400/50 flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(20,184,166,0.4)] relative overflow-hidden group">
-            <!-- Efecto de brillo de fondo animado -->
             <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-sky-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
             
             <svg class="w-12 h-12 relative z-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <!-- Sombreado 3D para la Esfera Antígeno -->
                 <radialGradient id="antigenSph" cx="35%" cy="35%" r="65%">
                   <stop offset="0%" stop-color="#38bdf8"/>
                   <stop offset="40%" stop-color="#0d9488"/>
                   <stop offset="100%" stop-color="#020617"/>
                 </radialGradient>
-                <!-- Gradiente metálico 3D para el Anticuerpo -->
                 <linearGradient id="antibodyMet" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stop-color="#ffffff"/>
                   <stop offset="35%" stop-color="#2dd4bf"/>
                   <stop offset="75%" stop-color="#0f766e"/>
                   <stop offset="100%" stop-color="#042f2e"/>
                 </linearGradient>
-                <!-- Filtro de Resplandor Neón -->
                 <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
                   <feGaussianBlur stdDeviation="3" result="blur" />
                   <feComposite in="SourceGraphic" in2="blur" operator="over" />
                 </filter>
               </defs>
-              
-              <!-- Órbita Molecular de Fondo -->
               <circle cx="50" cy="50" r="42" stroke="#14b8a6" stroke-width="1.5" stroke-dasharray="4 4" class="opacity-30 animate-spin" style="animation-duration: 25s; transform-origin: 50px 50px;" />
-              
-              <!-- Esfera de Antígeno 3D -->
               <circle cx="50" cy="68" r="20" fill="url(#antigenSph)" filter="url(#neonGlow)" />
-              
-              <!-- Anticuerpo en "Y" Docking en 3D -->
-              <!-- Brazo izquierdo -->
               <path d="M50 44 L30 24 A4 4 0 0 1 36 18 L50 32 Z" fill="url(#antibodyMet)" />
-              <!-- Brazo derecho -->
               <path d="M50 44 L70 24 A4 4 0 0 0 64 18 L50 32 Z" fill="url(#antibodyMet)" />
-              <!-- Tallo central -->
               <path d="M47 44 H53 V60 H47 Z" fill="url(#antibodyMet)" />
-              
-              <!-- Puntos de Contacto Luminosos (Complejo de Docking) -->
               <circle cx="50" cy="68" r="3" fill="#ffffff" filter="url(#neonGlow)" />
               <circle cx="33" cy="21" r="2.5" fill="#38bdf8" />
               <circle cx="67" cy="21" r="2.5" fill="#38bdf8" />
-              
-              <!-- Enlace de Energía Luminiscente -->
               <line x1="50" y1="44" x2="50" y2="68" stroke="#2dd4bf" stroke-width="2.5" stroke-dasharray="2 2" filter="url(#neonGlow)" />
             </svg>
           </div>
@@ -165,7 +148,7 @@
           </div>
         </div>
 
-        <!-- Botones dinámicos de acción del reporte -->
+        <!-- Botones de acción del reporte -->
         <div class="flex items-center gap-1.5 shrink-0 ml-4">
           <!-- Configuración de API Key de Gemini -->
           <button onclick="openApiKeyModal()" class="py-1.5 px-3 text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-teal-400 border border-slate-800 hover:border-teal-500/30 rounded-lg flex items-center gap-2 transition-all" title="Configurar conexión con la Inteligencia Artificial">
@@ -217,7 +200,7 @@
       <!-- SECCIÓN DE CONSULTAS CON IMÁGENES DE FONDO DE AUTOINMUNIDAD TOTALMENTE VISIBLES -->
       <div class="flex-1 relative min-h-0 overflow-hidden bg-slate-950">
         
-        <!-- IMAGEN DE FONDO PRINCIPAL - CARGADA DINÁMICAMENTE EN JS PARA EVITAR ICONOS ROTOS EN EL IFRAME -->
+        <!-- IMAGEN DE FONDO PRINCIPAL - CARGADA DINÁMICAMENTE -->
         <div id="bg-immunology-image" 
              class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-300 z-0" 
              style="opacity: 0.85; filter: blur(1px);">
@@ -271,7 +254,7 @@
           </div>
 
           <!-- Botón disparador -->
-          <button onclick="toggleBgControlPanel()" class="py-2 px-3 rounded-lg bg-slate-900/95 backdrop-blur-md border border-slate-800 text-[10px] font-mono-code text-slate-300 hover:text-teal-400 flex items-center gap-1.5 transition-all shadow-lg hover:shadow-teal-500/10" title="Ajustar opacidad y desenfoque del fondo 3D">
+          <button onclick="toggleBgControlPanel()" class="py-2 px-3 rounded-lg bg-slate-900/95 backdrop-blur-md border border-slate-800 text-[10px] font-mono-code text-slate-300 hover:text-teal-400 flex items-center gap-1.5 transition-all shadow-lg hover:shadow-teal-500/10" title="Ajustar opacidad y desenfoque del fondo">
             <i class="fa-solid fa-palette text-teal-450"></i> Personalizar Fondo (3D)
           </button>
         </div>
@@ -308,7 +291,7 @@
         </button>
       </div>
 
-      <!-- Contenedor de la vista previa con LA NUEVA IMAGEN Consulta.jpeg -->
+      <!-- Vista previa de Consulta.jpeg de fondo -->
       <div class="p-3.5 bg-slate-950/60 border-b border-slate-800/80">
         <span class="text-[9px] text-slate-500 uppercase font-mono-code font-bold block mb-2 tracking-wider">Estructura del Fondo Activo (3D)</span>
         <div class="rounded-xl overflow-hidden border-2 border-teal-500/30 bg-slate-950 relative group shadow-[0_4px_12px_rgba(13,148,136,0.15)]">
@@ -335,7 +318,7 @@
 
   </div>
 
-  <!-- MODAL DE CONFIGURACIÓN DE API KEY (SEGURO PARA GITHUB PAGES) -->
+  <!-- MODAL DE CONFIGURACIÓN DE API KEY (SEGURO PARA GITHUB PAGES / VERCEL) -->
   <div id="api-key-modal" class="hidden fixed inset-0 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center z-50 animate-fade-in">
     <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl max-w-sm w-full mx-4 shadow-2xl">
       <div class="w-12 h-12 rounded-full bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-4 mx-auto text-teal-450 animate-pulse">
@@ -343,7 +326,7 @@
       </div>
       <h4 class="text-sm font-semibold text-white text-center mb-2">Conectar Servidor de Inteligencia Artificial</h4>
       <p class="text-xs text-slate-400 text-center mb-4 leading-relaxed">
-        Para ejecutar el asesor en tu propio servidor de <strong>GitHub Pages</strong>, necesitas vincular tu propia clave de Google Gemini. Es 100% gratuita y privada.
+        Para ejecutar el asesor en tu propio servidor o GitHub Pages, necesitas vincular tu propia clave de Google Gemini. Es 100% gratuita y privada.
       </p>
 
       <div class="space-y-4 mb-6">
@@ -408,15 +391,13 @@
     let sourcesSidebarOpen = true;
 
     // API Key de Gemini
-    const apiKey = ""; // Dejar vacío; el cargador inteligente se encargará de resolverlo o de pedirlo al usuario
+    const apiKey = ""; 
 
-    // --- CARGADOR INTELIGENTE DE API KEY (SEGURO PARA GITHUB PAGES) ---
+    // --- CARGADOR INTELIGENTE DE API KEY ---
     function getApiKey() {
-      // 1. Si estamos ejecutando dentro del Canvas del chat original, la clave se autoinyectará aquí
       if (apiKey && apiKey.trim() !== "") {
         return apiKey.trim();
       }
-      // 2. Si estamos en GitHub Pages, buscar si el usuario ya guardó su clave de forma privada en su navegador
       try {
         return localStorage.getItem('gemini_api_key') || "";
       } catch (e) {
@@ -624,16 +605,14 @@
       }
     ];
 
-    // --- CARGADOR INTELIGENTE DE IMÁGENES SECUENCIALES (RESOLUCIÓN DE RUTAS CON FALLBACKS FLEXIBLES) ---
+    // --- CARGADOR INTELIGENTE DE IMÁGENES SECUENCIALES ---
     function initBackgroundAndPreviewImages() {
       const bgImgEl = document.getElementById('bg-immunology-image');
       const previewImgEl = document.getElementById('sidebar-preview-img');
       
-      // Obtener el directorio absoluto del iframe de forma robusta e inteligente
       const pathSegments = window.location.pathname.split('/');
       const lastSegment = pathSegments[pathSegments.length - 1];
       
-      // Si el último segmento contiene un punto (es un archivo como advisor.html o index.html) o está vacío, lo removemos
       if (lastSegment.includes('.') || lastSegment === '') {
         pathSegments.pop();
       }
@@ -654,7 +633,6 @@
         absoluteBaseUrl + "consulta.jpeg",
         absoluteBaseUrl + "Consulta.jpg",
         absoluteBaseUrl + "consulta.jpg",
-        // Respaldo de seguridad (render molecular 3D de alta definición) si el acceso local falla por completo
         "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1200&q=80"
       ];
 
@@ -669,11 +647,9 @@
           if (loaded) return;
           loaded = true;
 
-          // Asignar fondo principal
           if (bgImgEl) {
             bgImgEl.style.backgroundImage = `url('${TARGET_IMAGE_SRCS[index]}')`;
           }
-          // Asignar previsualización
           if (previewImgEl) {
             previewImgEl.src = TARGET_IMAGE_SRCS[index];
           }
@@ -700,7 +676,6 @@
       }
     }
 
-    // --- EL RESTO DE LA LÓGICA DE LA APP SIGUE IGUAL DE EXCELENTE Y FUNCIONAL ---
     function updateBgOpacity(val) {
       const bgImg = document.getElementById('bg-immunology-image');
       const opacityValSpan = document.getElementById('opacity-val');
@@ -723,20 +698,108 @@
       }
     }
 
+    // --- PARSER DE MARKDOWN ADAPTADO PARA WORD (SÓLO USA PÁRRAFOS Y TABLAS ESTÁNDAR) ---
+    function markdownToHtmlSimple(md) {
+      if (!md) return '';
+      
+      // Escapamos HTML básico para proteger el formato
+      let html = escapeHtml(md);
+      
+      let lines = html.split('\n');
+      let inTable = false;
+      let tableHtml = '';
+      let resultLines = [];
+      
+      for (let i = 0; i < lines.length; i++) {
+        let line = lines[i].trim();
+        
+        // Detección y renderizado de tablas
+        if (line.startsWith('|') && line.endsWith('|')) {
+          if (!inTable) {
+            inTable = true;
+            tableHtml = '<table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-family: \'Segoe UI\', Arial, sans-serif; font-size: 10pt; border: 1px solid #cbd5e1;">';
+            let cols = line.split('|').map(c => c.trim()).filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
+            tableHtml += '<thead style="background-color: #0f172a; color: #ffffff;"><tr>';
+            cols.forEach(col => {
+              tableHtml += `<th style="padding: 10px; border: 1px solid #cbd5e1; text-align: left; font-weight: bold; font-size: 9.5pt;">${col}</th>`;
+            });
+            tableHtml += '</tr></thead><tbody style="background-color: #fdfdfd;">';
+            
+            // Ignorar separador |---|---|
+            if (i + 1 < lines.length && lines[i+1].trim().startsWith('|') && lines[i+1].includes('-')) {
+              i++;
+            }
+          } else {
+            let cols = line.split('|').map(c => c.trim()).filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
+            tableHtml += '<tr>';
+            cols.forEach(col => {
+              tableHtml += `<td style="padding: 8px; border: 1px solid #cbd5e1; color: #334155; font-size: 9.5pt;">${col}</td>`;
+            });
+            tableHtml += '</tr>';
+          }
+        } else {
+          if (inTable) {
+            inTable = false;
+            tableHtml += '</tbody></table>';
+            resultLines.push(tableHtml);
+            tableHtml = '';
+          }
+          
+          // Encabezados
+          if (line.startsWith('### ')) {
+            resultLines.push(`<h4 style="color: #334155; font-size: 11pt; margin-top: 14px; margin-bottom: 6px; font-weight: bold; font-family: 'Segoe UI', Arial, sans-serif;">${line.substring(4)}</h4>`);
+          } else if (line.startsWith('## ')) {
+            resultLines.push(`<h3 style="color: #0d9488; font-size: 13pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; margin-top: 18px; margin-bottom: 8px; font-weight: bold; font-family: 'Segoe UI', Arial, sans-serif; text-transform: uppercase;">${line.substring(3)}</h3>`);
+          } else if (line.startsWith('# ')) {
+            resultLines.push(`<h2 style="color: #0f172a; font-size: 15pt; border-bottom: 2px solid #0d9488; padding-bottom: 6px; margin-top: 22px; margin-bottom: 10px; font-weight: bold; font-family: 'Segoe UI', Arial, sans-serif;">${line.substring(2)}</h2>`);
+          }
+          // Listas (Traducidas a hermosos párrafos con sangría e indentación para no generar alertas en Word)
+          else if (line.startsWith('- ')) {
+            resultLines.push(`<p style="margin: 0 0 4pt 20px; font-size: 10.5pt; font-family: 'Segoe UI', Arial, sans-serif; color: #334155;">&bull; ${line.substring(2)}</p>`);
+          } else if (/^\d+\.\s/.test(line)) {
+            let numMatch = line.match(/^(\d+)\.\s(.*)/);
+            if (numMatch) {
+              resultLines.push(`<p style="margin: 0 0 4pt 20px; font-size: 10.5pt; font-family: 'Segoe UI', Arial, sans-serif; color: #334155;">${numMatch[1]}. ${numMatch[2]}</p>`);
+            } else {
+              resultLines.push(`<p style="margin: 0 0 8pt 0; font-size: 10.5pt; font-family: 'Segoe UI', Arial, sans-serif; color: #1e293b;">${line}</p>`);
+            }
+          }
+          // Párrafos regulares
+          else if (line !== '') {
+            resultLines.push(`<p style="margin: 0 0 8pt 0; font-size: 10.5pt; font-family: 'Segoe UI', Arial, sans-serif; color: #1e293b; line-height: 1.6;">${line}</p>`);
+          }
+        }
+      }
+      
+      if (inTable) {
+        tableHtml += '</tbody></table>';
+        resultLines.push(tableHtml);
+      }
+      
+      let parsedHtml = resultLines.join('\n');
+      
+      // Negritas y bloques de fórmulas
+      parsedHtml = parsedHtml.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      parsedHtml = parsedHtml.replace(/\$\$(.*?)\$\$/gs, '<div style="background-color: #f8fafc; border-left: 3px solid #0d9488; padding: 10px; margin: 10px 0; font-family: Consolas, monospace; text-align: center; color: #0d9488; font-size: 9.5pt;">$1</div>');
+      parsedHtml = parsedHtml.replace(/\$(.*?)\$/g, '<code style="background-color: #f1f5f9; color: #0d9488; padding: 2px 4px; border-radius: 4px; font-family: Consolas, monospace; font-size: 9.5pt; border: 1px solid #e2e8f0;">$1</code>');
+      
+      return parsedHtml;
+    }
+
     // --- INICIALIZACIÓN DE LA APLICACIÓN ---
     window.onload = function() {
       let saved = null;
       try {
         saved = localStorage.getItem('scientific_chats');
       } catch (e) {
-        console.warn("localStorage no disponible. Fallback a sesión de memoria activa.", e);
+        console.warn("localStorage no disponible. Fallback a memoria.", e);
       }
 
       if (saved) {
         try {
           conversations = JSON.parse(saved);
         } catch(e) {
-          console.error("Error al recuperar el historial:", e);
+          console.error("Error al recuperar historial:", e);
         }
       }
 
@@ -765,11 +828,11 @@
       try {
         localStorage.setItem('scientific_chats', JSON.stringify(conversations));
       } catch (e) {
-        console.error("Fallo al escribir en el almacenamiento local por restricciones de Iframe.", e);
+        console.error("Fallo al escribir en almacenamiento.", e);
       }
     }
 
-    // --- EXPORTAR ANÁLISIS A .DOC (WORD COMPATIBLE) ---
+    // --- EXPORTAR ANÁLISIS A .DOC EXCELENTE Y ROBUSTO ---
     function exportActiveToWord() {
       const activeConv = conversations.find(c => c.id === activeConversationId);
       if (!activeConv || activeConv.messages.length === 0) {
@@ -785,7 +848,7 @@
         return;
       }
 
-      const lastUserMsg = userMessages[userMessages.length - 1]?.content || "Consulta general sobre autoinmunidad";
+      const lastUserMsg = userMessages[userMessages.length - 1]?.content || "Consulta general";
       const lastAssistantMsg = assistantMessages[assistantMessages.length - 1];
       
       const sourceIds = lastAssistantMsg.sources || [];
@@ -793,11 +856,11 @@
       
       if (sourceIds.length > 0) {
         sourcesHtml = `
-          <h2 style="font-family: 'Segoe UI', Calibri, Arial, sans-serif; color: #0d9488; border-bottom: 2px solid #0d9488; padding-bottom: 6px; margin-top: 30px; font-size: 14pt; text-transform: uppercase; font-weight: bold;">
+          <h2 style="font-family: 'Segoe UI', Arial, sans-serif; color: #0d9488; border-bottom: 2px solid #0d9488; padding-bottom: 6px; margin-top: 30px; font-size: 14pt; text-transform: uppercase; font-weight: bold;">
             BIBLIOTECA DE REFERENCIA BIBLIOGRÁFICA
           </h2>
-          <p style="font-family: 'Segoe UI', Calibri, Arial, sans-serif; font-size: 10pt; color: #475569; margin-bottom: 15px; line-height: 1.5;">
-            Las siguientes fuentes de nuestro cuaderno científico (de un total de 53 fuentes oficiales de autoinmunidad) fueron indexadas y consultadas mediante el algoritmo RAG local para respaldar esta respuesta científica:
+          <p style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 10pt; color: #475569; margin-bottom: 15px; line-height: 1.5;">
+            Las siguientes fuentes del cuaderno clínico oficial sirvieron de respaldo riguroso para la elaboración de la respuesta:
           </p>
         `;
         
@@ -805,13 +868,13 @@
           const doc = AUTOIMMUNE_DATABASE.find(d => d.id === id);
           if (doc) {
             sourcesHtml += `
-              <div style="font-family: 'Segoe UI', Calibri, Arial, sans-serif; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px; margin-bottom: 12px; background-color: #f8fafc;">
+              <div style="font-family: 'Segoe UI', Arial, sans-serif; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px; margin-bottom: 12px; background-color: #f8fafc;">
                 <div style="margin-bottom: 6px;">
                   <strong style="color: #0f172a; font-size: 11pt;">[Ref ${idx + 1}] ${escapeHtml(doc.title)}</strong>
                   <span style="font-size: 8.5pt; background-color: #e2e8f0; color: #475569; padding: 2px 6px; border-radius: 4px; margin-left: 8px;">${escapeHtml(doc.citation)}</span>
                 </div>
                 <p style="font-size: 10pt; color: #334155; margin: 4px 0 0 0; line-height: 1.45;">
-                  <strong>Evidencia Registrada:</strong> ${escapeHtml(doc.summary)}
+                  <strong>Evidencia:</strong> ${escapeHtml(doc.summary)}
                 </p>
               </div>
             `;
@@ -819,62 +882,7 @@
         });
       }
 
-      let bodyFormatted = lastAssistantMsg.content;
-      bodyFormatted = bodyFormatted.replace(/\*\*(.*?)\*\"/g, '<strong>$1</strong>');
-      bodyFormatted = bodyFormatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-      bodyFormatted = bodyFormatted.replace(/### (.*?)\n/g, '<h4 style="color: #334155; font-family: \'Segoe UI\', Calibri, Arial, sans-serif; font-size: 11pt; margin-top: 15px; margin-bottom: 6px; font-weight: bold;">$1</h4>');
-      bodyFormatted = bodyFormatted.replace(/## (.*?)\n/g, '<h3 style="color: #0d9488; font-family: \'Segoe UI\', Calibri, Arial, sans-serif; font-size: 13pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; margin-top: 20px; margin-bottom: 10px; font-weight: bold; text-transform: uppercase;">$1</h3>');
-      bodyFormatted = bodyFormatted.replace(/^\s*-\s+(.*?)$/gm, '<li style="font-family: \'Segoe UI\', Calibri, Arial, sans-serif; font-size: 10pt; color: #334155; margin-left: 20px; margin-bottom: 4px;">$1</li>');
-      bodyFormatted = bodyFormatted.replace(/^\s*\d+\.\s+(.*?)$/gm, '<li style="font-family: \'Segoe UI\', Calibri, Arial, sans-serif; font-size: 10pt; color: #334155; margin-left: 20px; margin-bottom: 4px;">$1</li>');
-
-      let lines = bodyFormatted.split('\n');
-      let inTable = false;
-      let tableHtml = '';
-      let resultLines = [];
-
-      for (let i = 0; i < lines.length; i++) {
-        let line = lines[i].trim();
-        if (line.startsWith('|') && line.endsWith('|')) {
-          if (!inTable) {
-            inTable = true;
-            tableHtml = '<table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-family: \'Segoe UI\', Calibri, Arial, sans-serif; font-size: 9pt; border: 1px solid #cbd5e1;">';
-            let cols = line.split('|').map(c => c.trim()).filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
-            tableHtml += '<thead style="background-color: #0f172a; color: #ffffff;"><tr>';
-            cols.forEach(col => {
-              tableHtml += `<th style="padding: 10px; border: 1px solid #cbd5e1; text-align: left; font-weight: bold; text-transform: uppercase; font-size: 8.5pt;">${col}</th>`;
-            });
-            tableHtml += '</tr></thead><tbody style="background-color: #fdfdfd;">';
-            
-            if (i + 1 < lines.length && lines[i+1].trim().startsWith('|') && lines[i+1].includes('-')) {
-              i++;
-            }
-          } else {
-            let cols = line.split('|').map(c => c.trim()).filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
-            tableHtml += '<tr>';
-            cols.forEach(col => {
-              tableHtml += `<td style="padding: 8px; border: 1px solid #cbd5e1; color: #334155; line-height: 1.4;">${col}</td>`;
-            });
-            tableHtml += '</tr>';
-          }
-        } else {
-          if (inTable) {
-            inTable = false;
-            tableHtml += '</tbody></table>';
-            resultLines.push(tableHtml);
-            tableHtml = '';
-          }
-          resultLines.push(lines[i]);
-        }
-      }
-
-      if (inTable) {
-        tableHtml += '</tbody></table>';
-        resultLines.push(tableHtml);
-      }
-
-      bodyFormatted = resultLines.join('<br/>');
-      bodyFormatted = bodyFormatted.replace(/\$\$(.*?)\$\$/gs, '<div style="background-color: #f8fafc; border-left: 3px solid #0d9488; padding: 10px; margin: 10px 0; font-family: Consolas, \'Courier New\', monospace; text-align: center; color: #0d9488; font-size: 9.5pt;">$1</div>');
-      bodyFormatted = bodyFormatted.replace(/\$(.*?)\$/g, '<code class="background-color: #f1f5f9; color: #0d9488; padding: 2px 4px; border-radius: 4px; font-family: Consolas, \'Courier New\', monospace; font-size: 9.5pt; border: 1px solid #e2e8f0;">$1</code>');
+      let bodyFormatted = markdownToHtmlSimple(lastAssistantMsg.content);
 
       const docHtml = `
         <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
@@ -894,14 +902,11 @@
             @page WordSection1 {
               size: 21.0cm 29.7cm;
               margin: 2.5cm 2.5cm 2.5cm 2.5cm;
-              mso-header-margin: 35.4pt;
-              mso-footer-margin: 35.4pt;
-              mso-paper-source: 0;
             }
             div.WordSection1 {
               page: WordSection1;
             }
-            body { font-family: 'Segoe UI', Calibri, Arial, sans-serif; line-height: 1.6; color: #1e293b; }
+            body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #1e293b; }
             p { margin: 0 0 10pt 0; font-size: 10.5pt; line-height: 1.6; }
           </style>
         </head>
@@ -911,15 +916,15 @@
               <table style="width: 100%; border: none; border-collapse: collapse;">
                 <tr>
                   <td style="padding: 0; text-align: left; vertical-align: middle;">
-                    <h1 style="color: #0f172a; font-family: 'Segoe UI', Calibri, Arial, sans-serif; margin: 0 0 2px 0; font-size: 16pt; text-transform: uppercase; font-weight: bold;">
+                    <h1 style="color: #0f172a; font-family: 'Segoe UI', Arial, sans-serif; margin: 0 0 2px 0; font-size: 16pt; text-transform: uppercase; font-weight: bold;">
                       REPORTE CIENTÍFICO DE AUTOINMUNIDAD
                     </h1>
-                    <span style="font-size: 8.5pt; color: #64748b; font-family: 'Segoe UI', Calibri, Arial, sans-serif; font-weight: 500;">
+                    <span style="font-size: 8.5pt; color: #64748b; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500;">
                       SISTEMA DE ASESORÍA CLÍNICA DE ALTO NIVEL &bull; By Huguin
                     </span>
                   </td>
                   <td style="padding: 0; text-align: right; vertical-align: middle;">
-                    <span style="font-size: 8.5pt; color: #0d9488; font-family: 'Segoe UI', Calibri, Arial, sans-serif; font-weight: bold; text-transform: uppercase;">
+                    <span style="font-size: 8.5pt; color: #0d9488; font-family: 'Segoe UI', Arial, sans-serif; font-weight: bold; text-transform: uppercase;">
                       Fecha: ${new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
                     </span>
                   </td>
@@ -927,23 +932,23 @@
               </table>
             </div>
 
-            <div style="background-color: #f8fafc; padding: 14px; border-radius: 8px; border-left: 4px solid #0f172a; margin-bottom: 25px; font-family: 'Segoe UI', Calibri, Arial, sans-serif;">
+            <div style="background-color: #f8fafc; padding: 14px; border-radius: 8px; border-left: 4px solid #0f172a; margin-bottom: 25px;">
               <strong style="color: #0f172a; font-size: 9.5pt; text-transform: uppercase;">CONSULTA DEL ESPECIALISTA:</strong>
               <p style="margin: 6px 0 0 0; font-size: 10.5pt; color: #334155; font-style: italic; line-height: 1.5;">
                 "${escapeHtml(lastUserMsg)}"
               </p>
             </div>
 
-            <h2 style="font-family: 'Segoe UI', Calibri, Arial, sans-serif; color: #0f172a; border-bottom: 2px solid #0f172a; padding-bottom: 6px; margin-bottom: 15px; font-size: 13pt; text-transform: uppercase; font-weight: bold;">
+            <h2 style="font-family: 'Segoe UI', Arial, sans-serif; color: #0f172a; border-bottom: 2px solid #0f172a; padding-bottom: 6px; margin-bottom: 15px; font-size: 13pt; text-transform: uppercase; font-weight: bold;">
               ANÁLISIS INMUNOBIOLÓGICO Y CLÍNICO
             </h2>
-            <div style="font-family: 'Segoe UI', Calibri, Arial, sans-serif; font-size: 10.5pt; line-height: 1.6; color: #1e293b;">
+            <div style="font-family: 'Segoe UI', Arial, sans-serif; font-size: 10.5pt; line-height: 1.6; color: #1e293b;">
               ${bodyFormatted}
             </div>
 
             ${sourcesHtml}
 
-            <div style="margin-top: 50px; border-top: 1px solid #cbd5e1; padding-top: 12px; text-align: center; font-family: 'Segoe UI', Calibri, Arial, sans-serif; font-size: 8pt; color: #94a3b8;">
+            <div style="margin-top: 50px; border-top: 1px solid #cbd5e1; padding-top: 12px; text-align: center; font-family: 'Segoe UI', Arial, sans-serif; font-size: 8pt; color: #94a3b8;">
               Este reporte ha sido emitido de manera computacional como una revisión de la literatura oficial, no representa indicaciones médicas de diagnóstico definitivas sin confirmación clínica.
             </div>
           </div>
@@ -951,7 +956,6 @@
         </html>
       `;
 
-      // Exportación en formato compatible (.doc) para que Word lo abra nativamente y sin errores
       const blob = new Blob(['\ufeff' + docHtml], { type: 'application/msword' });
       const url = URL.createObjectURL(blob);
       const downloadAnchor = document.createElement('a');
@@ -1117,7 +1121,7 @@
         const messageBlock = document.createElement('div');
         
         if (isUser) {
-          messageBlock.className = "flex gap-4 max-w-3xl ml-auto bg-slate-900 border border-slate-850 p-4 rounded-2xl shadow-lg text-slate-100 animate-fade-in relative z-10";
+          messageBlock.className = "flex gap-4 max-w-3xl ml-auto bg-slate-900/90 border border-slate-850 p-4 rounded-2xl shadow-lg text-slate-100 animate-fade-in relative z-10";
           messageBlock.innerHTML = `
             <div class="flex-1 text-sm leading-relaxed">${escapeHtml(msg.content)}</div>
             <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0">
@@ -1243,6 +1247,159 @@
       saveBtn.classList.remove('hidden');
     }
 
+    // --- CONEXIÓN AL MOTOR GEMINI API DE GOOGLE (CADENA EN CASCADA COMPATIBLE CON CLAVES EXTERNAS Y LOCALES) ---
+
+    async function handleSendMessage(event) {
+      if (event) event.preventDefault();
+      
+      const input = document.getElementById('chat-input');
+      const text = input.value.trim();
+      if (!text || isGenerating) return;
+
+      const currentKey = getApiKey();
+      if (!currentKey || currentKey === "") {
+        openApiKeyModal();
+        return;
+      }
+
+      const activeConv = conversations.find(c => c.id === activeConversationId);
+      if (!activeConv) return;
+
+      activeConv.messages.push({
+        role: 'user',
+        content: text
+      });
+
+      if (activeConv.title === "Nueva Consulta") {
+        activeConv.title = text.length > 30 ? text.substring(0, 30) + '...' : text;
+      }
+
+      input.value = '';
+      saveToLocalStorage();
+      renderSidebar();
+      renderActiveChat();
+
+      const matchedSources = searchSources(text);
+      const sourceIds = matchedSources.map(s => s.id);
+      
+      isGenerating = true;
+      const chatMessagesContainer = document.getElementById('chat-messages');
+      const loadingBlock = document.createElement('div');
+      loadingBlock.id = "gemini-loading-indicator";
+      loadingBlock.className = "flex gap-4 max-w-4xl mr-auto p-4 rounded-2xl bg-slate-950/80 backdrop-blur-sm border border-slate-900/50 text-slate-100 animate-pulse relative z-10";
+      loadingBlock.innerHTML = `
+        <div class="w-8 h-8 rounded-full bg-teal-500/10 border border-teal-500/30 flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-spinner animate-spin text-teal-400 text-sm"></i>
+        </div>
+        <div class="flex-1 space-y-3">
+          <div class="text-xs font-mono-code text-teal-400 font-medium">Asesor Científico</div>
+          <div class="space-y-2">
+            <div class="h-3 bg-slate-800 rounded w-1/3"></div>
+            <div class="h-3 bg-slate-800 rounded w-5/6"></div>
+            <div class="h-3 bg-slate-800 rounded w-4/5"></div>
+          </div>
+          <div class="text-[10px] text-teal-400/80 font-mono-code">Consultando base de referencia del cuaderno de autoinmunidad...</div>
+        </div>
+      `;
+      chatMessagesContainer.appendChild(loadingBlock);
+      chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+
+      const systemPrompt = `Eres el Asesor Científico Experto en Autoinmunidad, Inmunología y Reumatología Clínica.
+Tu objetivo es responder de manera sumamente formal, rigurosa, exhaustiva y académica a las consultas de profesionales de la salud.
+Debes responder de forma coherente utilizando los fragmentos de las fuentes del cuaderno clínico que te proporcionamos a continuación.
+
+REGLAS DE FORMATO Y ESTILO:
+1. Presenta los datos complejos en forma de TABLAS de Markdown si la consulta lo requiere para facilitar la comparación rápida.
+2. Respeta el rigor científico. Si utilizas fórmulas o conceptos bioquímicos específicos, exprésalos utilizando notación LaTeX para fórmulas en línea ($...$) o destacadas ($$...$$).
+3. Es obligatorio que cites explícitamente las fuentes del cuaderno al final de tus explicaciones o integradas en el texto usando su formato de citación académica (ej. "[Guía SER, 2019]", "[Consenso ICAP, 2023]").
+4. Explica la correlación fisiopatológica, diagnóstica y terapéutica fundamentando tus argumentos en los fragmentos proveídos.
+5. Recuerda que la interpretación de autoanticuerpos aislados nunca reemplaza el juicio clínico o criterios de clasificación sistémica (como EULAR/ACR). Enfatiza este aspecto.
+
+FUENTES DISPONIBLES EN EL CUADERNO PARA ESTA PREGUNTA:
+${matchedSources.map((doc, idx) => `[Referencia ${idx + 1}]:
+Título: ${doc.title}
+Cita: ${doc.citation}
+Resumen/Snippet: ${doc.summary}`).join('\n\n')}`;
+
+      try {
+        const responseText = await callGeminiAPI(text, systemPrompt);
+        
+        const loadingEl = document.getElementById('gemini-loading-indicator');
+        if (loadingEl) loadingEl.remove();
+
+        activeConv.messages.push({
+          role: 'assistant',
+          content: responseText,
+          sources: sourceIds
+        });
+
+        saveToLocalStorage();
+        renderActiveChat();
+
+      } catch (error) {
+        console.error("Gemini API Error:", error);
+        
+        const loadingEl = document.getElementById('gemini-loading-indicator');
+        if (loadingEl) loadingEl.remove();
+
+        showErrorBanner("Error al consultar el motor de análisis: " + error.message);
+      } finally {
+        isGenerating = false;
+      }
+    }
+
+    // CADENA DE MODELOS EN CASCADA: PRUEBA 2.5 PREVIEW -> 2.5 ESTABLE -> 1.5 ESTABLE
+    async function callGeminiAPI(userQuery, systemPrompt) {
+      const activeKey = getApiKey();
+      const modelsToTry = [
+        "gemini-2.5-flash-preview-09-2025",
+        "gemini-2.5-flash",
+        "gemini-1.5-flash"
+      ];
+      
+      let lastError = null;
+      for (const model of modelsToTry) {
+        try {
+          return await fetchFromGemini(model, userQuery, systemPrompt, activeKey);
+        } catch (err) {
+          // Si el error es de incompatibilidad o modelo inhabilitado (403, 404, etc), saltamos rápido al siguiente
+          console.warn(`El modelo ${model} no está disponible. Intentando el siguiente en la cascada...`);
+          lastError = err;
+        }
+      }
+      throw lastError || new Error("No se pudo establecer conexión con ningún modelo de Gemini disponible.");
+    }
+
+    async function fetchFromGemini(modelName, userQuery, systemPrompt, activeKey) {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${activeKey}`;
+      
+      const payload = {
+        contents: [{ parts: [{ text: userQuery }] }],
+        systemInstruction: { parts: [{ text: systemPrompt }] }
+      };
+
+      const options = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      };
+
+      const response = await fetch(url, options);
+      if (response.status === 404 || response.status === 403) {
+        throw new Error(`Modelo no disponible o restringido (${response.status})`);
+      }
+      if (!response.ok) {
+        throw new Error(`Error de conexión HTTP (${response.status})`);
+      }
+
+      const data = await response.json();
+      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!text) {
+        throw new Error("Respuesta vacía del servidor.");
+      }
+      return text;
+    }
+
     function saveEditTitle(id, event) {
       if (event) event.stopPropagation();
       const textSpan = document.getElementById(`title-text-${id}`);
@@ -1305,155 +1462,6 @@
       if (event.key === 'Enter' && !event.shiftKey) {
         event.preventDefault();
         handleSendMessage(event);
-      }
-    }
-
-    // --- CONEXIÓN AL MOTOR GEMINI API DE GOOGLE ---
-
-    async function handleSendMessage(event) {
-      if (event) event.preventDefault();
-      
-      const input = document.getElementById('chat-input');
-      const text = input.value.trim();
-      if (!text || isGenerating) return;
-
-      // 1. Validar que tengamos una API Key configurada
-      const currentKey = getApiKey();
-      if (!currentKey || currentKey === "") {
-        openApiKeyModal();
-        return;
-      }
-
-      const activeConv = conversations.find(c => c.id === activeConversationId);
-      if (!activeConv) return;
-
-      activeConv.messages.push({
-        role: 'user',
-        content: text
-      });
-
-      if (activeConv.title === "Nueva Consulta") {
-        activeConv.title = text.length > 30 ? text.substring(0, 30) + '...' : text;
-      }
-
-      input.value = '';
-      saveToLocalStorage();
-      renderSidebar();
-      renderActiveChat();
-
-      const matchedSources = searchSources(text);
-      const sourceIds = matchedSources.map(s => s.id);
-      
-      isGenerating = true;
-      const chatMessagesContainer = document.getElementById('chat-messages');
-      const loadingBlock = document.createElement('div');
-      loadingBlock.id = "gemini-loading-indicator";
-      loadingBlock.className = "flex gap-4 max-w-4xl mr-auto p-4 rounded-2xl bg-slate-950/80 backdrop-blur-sm border border-slate-900/50 text-slate-100 animate-pulse relative z-10";
-      loadingBlock.innerHTML = `
-        <div class="w-8 h-8 rounded-full bg-teal-500/10 border border-teal-500/30 flex items-center justify-center shrink-0">
-          <i class="fa-solid fa-spinner animate-spin text-teal-400 text-sm"></i>
-        </div>
-        <div class="flex-1 space-y-3">
-          <div class="text-xs font-mono-code text-teal-400 font-medium">Asesor Científico</div>
-          <div class="space-y-2">
-            <div class="h-3 bg-slate-800 rounded w-1/3"></div>
-            <div class="h-3 bg-slate-800 rounded w-5/6"></div>
-            <div class="h-3 bg-slate-800 rounded w-4/5"></div>
-          </div>
-          <div class="text-[10px] text-teal-400/80 font-mono-code">Consultando base de referencia del cuaderno de autoinmunidad...</div>
-        </div>
-      `;
-      chatMessagesContainer.appendChild(loadingBlock);
-      chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
-
-      const systemPrompt = `Eres el Asesor Científico Experto en Autoinmunidad, Inmunología y Reumatología Clínica.
-Tu objetivo es responder de manera sumamente formal, rigurosa, exhaustiva y académica a las consultas de profesionales de la salud.
-Debes responder de forma coherente utilizando los fragmentos de las fuentes del cuaderno clínico que te proporcionamos a continuación.
-
-REGLAS DE FORMATO Y ESTILO:
-1. Presenta los datos complejos en forma de TABLAS de Markdown si la consulta lo requiere para facilitar la comparación rápida.
-2. Respeta el rigor científico. Si utilizas fórmulas o conceptos bioquímicos específicos, exprésalos utilizando notación LaTeX para fórmulas en línea ($...$) o destacadas ($$...$$).
-3. Es obligatorio e indispensable que cites explícitamente las fuentes del cuaderno al final de tus explicaciones o integradas en el texto usando su formato de citación académica (ej. "[Guía SER, 2019]", "[Consenso ICAP, 2023]").
-4. Explica la correlación fisiopatológica, diagnóstica y terapéutica fundamentando tus argumentos en los fragmentos proveídos.
-5. Recuerda que la interpretación de autoanticuerpos aislados nunca reemplaza el juicio clínico o criterios de clasificación sistémica (como EULAR/ACR). Enfatiza este aspecto.
-
-FUENTES DISPONIBLES EN EL CUADERNO PARA ESTA PREGUNTA:
-${matchedSources.map((doc, idx) => `[Referencia ${idx + 1}]:
-Título: ${doc.title}
-Cita: ${doc.citation}
-Resumen/Snippet: ${doc.summary}`).join('\n\n')}`;
-
-      try {
-        const responseText = await callGeminiAPI(text, systemPrompt);
-        
-        const loadingEl = document.getElementById('gemini-loading-indicator');
-        if (loadingEl) loadingEl.remove();
-
-        activeConv.messages.push({
-          role: 'assistant',
-          content: responseText,
-          sources: sourceIds
-        });
-
-        saveToLocalStorage();
-        renderActiveChat();
-
-      } catch (error) {
-        console.error("Gemini API Error:", error);
-        
-        const loadingEl = document.getElementById('gemini-loading-indicator');
-        if (loadingEl) loadingEl.remove();
-
-        showErrorBanner("Error al consultar el motor de análisis: " + error.message);
-      } finally {
-        isGenerating = false;
-      }
-    }
-
-    async function callGeminiAPI(userQuery, systemPrompt) {
-      const activeKey = getApiKey();
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${activeKey}`;
-      
-      const payload = {
-        contents: [
-          { parts: [{ text: userQuery }] }
-        ],
-        systemInstruction: {
-          parts: [{ text: systemPrompt }]
-        }
-      };
-
-      const options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-      };
-
-      return await fetchWithRetry(url, options, 5, 1000);
-    }
-
-    async function fetchWithRetry(url, options, retries = 5, delay = 1000) {
-      try {
-        const response = await fetch(url, options);
-        if (!response.ok) {
-          throw new Error(`Código de estado HTTP: ${response.status}`);
-        }
-        const data = await response.json();
-        
-        const generatedText = data.candidates?.[0]?.content?.parts?.[0]?.text;
-        if (!generatedText) {
-          throw new Error("Respuesta del motor vacía.");
-        }
-        return generatedText;
-      } catch (error) {
-        if (retries > 1) {
-          await new Promise(resolve => setTimeout(resolve, delay));
-          return fetchWithRetry(url, options, retries - 1, delay * 2);
-        } else {
-          throw error;
-        }
       }
     }
 
