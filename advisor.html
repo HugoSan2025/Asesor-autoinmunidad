@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asesor Científico Experto en Autoinmunidad</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-mono-code {
+      font-family: 'Fira Code', monospace;
+    }
+    /* Estilización de scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0d9488;
+    }
+    /* Animación de carga de pulso científico */
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.6; box-shadow: 0 0 5px rgba(13, 148, 136, 0.2); }
+      50% { opacity: 1; box-shadow: 0 0 15px rgba(13, 148, 136, 0.6); }
+    }
+    .pulse-glow-teal {
+      animation: pulse-glow 2s infinite ease-in-out;
+    }
+    /* Patrón de fondo molecular orgánico sutil para la zona de chat */
+    .bg-immunology-pattern {
+      background-image: radial-gradient(rgba(13, 148, 136, 0.12) 1.5px, transparent 1.5px), 
+                        radial-gradient(rgba(56, 189, 248, 0.08) 1.5px, transparent 1.5px);
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 h-screen max-h-screen flex flex-col overflow-hidden selection:bg-teal-500/30 selection:text-teal-200">
+
+  <!-- CONTENEDOR PRINCIPAL DE LA APP -->
+  <div class="flex flex-1 overflow-hidden h-full max-h-full" id="app">
+    
+    <!-- BARRA LATERAL (Historial de consultas) -->
+    <aside id="sidebar" class="w-80 bg-slate-900 border-r border-slate-800 flex flex-col shrink-0 transition-all duration-300 z-30 fixed inset-y-0 left-0 -translate-x-full md:translate-x-0 md:relative md:flex h-full">
+      
+      <!-- Encabezado de la barra lateral con LOGO 3D GIGANTE y con SOMBRAS -->
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between shrink-0 bg-slate-900">
+        <div class="flex items-center gap-4">
+          <!-- Logo 3D llamativo con sombras e iluminación bioluminiscente -->
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500/25 via-slate-900 to-sky-950/40 border-2 border-teal-400/50 flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(20,184,166,0.4)] relative overflow-hidden group">
+            <!-- Efecto de brillo de fondo animado -->
+            <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-sky-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+            
+            <svg class="w-12 h-12 relative z-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Sombreado 3D para la Esfera Antígeno -->
+                <radialGradient id="antigenSph" cx="35%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#38bdf8"/>
+                  <stop offset="40%" stop-color="#0d9488"/>
+                  <stop offset="100%" stop-color="#020617"/>
+                </radialGradient>
+                <!-- Gradiente metálico 3D para el Anticuerpo -->
+                <linearGradient id="antibodyMet" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="35%" stop-color="#2dd4bf"/>
+                  <stop offset="75%" stop-color="#0f766e"/>
+                  <stop offset="100%" stop-color="#042f2e"/>
+                </linearGradient>
+                <!-- Filtro de Resplandor Neón -->
+                <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+              
+              <!-- Órbita Molecular de Fondo -->
+              <circle cx="50" cy="50" r="42" stroke="#14b8a6" stroke-width="1.5" stroke-dasharray="4 4" class="opacity-30 animate-spin" style="animation-duration: 25s; transform-origin: 50px 50px;" />
+              
+              <!-- Esfera de Antígeno 3D -->
+              <circle cx="50" cy="68" r="20" fill="url(#antigenSph)" filter="url(#neonGlow)" />
+              
+              <!-- Anticuerpo en "Y" Docking en 3D -->
+              <!-- Brazo izquierdo -->
+              <path d="M50 44 L30 24 A4 4 0 0 1 36 18 L50 32 Z" fill="url(#antibodyMet)" />
+              <!-- Brazo derecho -->
+              <path d="M50 44 L70 24 A4 4 0 0 0 64 18 L50 32 Z" fill="url(#antibodyMet)" />
+              <!-- Tallo central -->
+              <path d="M47 44 H53 V60 H47 Z" fill="url(#antibodyMet)" />
+              
+              <!-- Puntos de Contacto Luminosos (Complejo de Docking) -->
+              <circle cx="50" cy="68" r="3" fill="#ffffff" filter="url(#neonGlow)" />
+              <circle cx="33" cy="21" r="2.5" fill="#38bdf8" />
+              <circle cx="67" cy="21" r="2.5" fill="#38bdf8" />
+              
+              <!-- Enlace de Energía Luminiscente -->
+              <line x1="50" y1="44" x2="50" y2="68" stroke="#2dd4bf" stroke-width="2.5" stroke-dasharray="2 2" filter="url(#neonGlow)" />
+            </svg>
+          </div>
+          <div>
+            <h1 class="font-bold text-xs leading-none text-white tracking-wide uppercase">ASESOR AUTOINMUNIDAD</h1>
+            <span class="text-[10px] font-mono-code text-teal-400 font-semibold block mt-1">By Huguin</span>
+          </div>
+        </div>
+        <!-- Cerrar barra lateral en móviles -->
+        <button onclick="toggleSidebar()" class="md:hidden text-slate-400 hover:text-white p-1">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Botón Nueva Consulta -->
+      <div class="p-4 shrink-0">
+        <button onclick="createNewConversation()" class="w-full py-2.5 px-4 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-medium text-sm flex items-center justify-center gap-2 transition-all shadow-lg shadow-teal-900/20 hover:shadow-teal-500/10">
+          <i class="fa-solid fa-plus text-xs"></i>
+          Nueva Consulta
+        </button>
+      </div>
+
+      <!-- Lista de Conversaciones (Desplazable) -->
+      <div class="flex-1 overflow-y-auto min-h-0 px-2 space-y-1" id="conversations-list">
+        <!-- Renderizado dinámico -->
+      </div>
+
+      <!-- Información de estado del motor -->
+      <div class="p-4 border-t border-slate-800 bg-slate-950/40 font-mono-code shrink-0">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-2 h-2 rounded-full bg-teal-400 pulse-glow-teal"></div>
+          <span class="text-xs text-slate-400 font-medium">Motor de IA: <span class="text-teal-400 font-semibold">Gemini 2.5 Active</span></span>
+        </div>
+        <div class="text-[11px] text-slate-400 font-sans leading-relaxed">
+          <i class="fa-solid fa-database text-teal-500 mr-1.5"></i><strong>53 fuentes bibliográficas</strong> del cuaderno clínico indexadas y listas para consultas.
+        </div>
+      </div>
+    </aside>
+
+    <!-- PANEL DE CHAT PRINCIPAL -->
+    <main class="flex-1 flex flex-col bg-slate-950 overflow-hidden relative min-h-0 h-full">
+      
+      <!-- Cabecera de navegación superior -->
+      <header class="h-16 border-b border-slate-900 px-4 flex items-center justify-between bg-slate-950/80 backdrop-blur shrink-0 z-20">
+        <div class="flex items-center gap-3 min-w-0 flex-1">
+          <!-- Botón de menú en móviles -->
+          <button onclick="toggleSidebar()" class="md:hidden p-2 text-slate-400 hover:text-white hover:bg-slate-900 rounded-lg shrink-0">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          
+          <div class="truncate">
+            <span class="text-[10px] text-teal-400 font-bold uppercase tracking-wider font-mono-code">Consulta Activa</span>
+            <h2 class="text-sm font-semibold text-slate-200 truncate" id="active-chat-title">Selecciona una consulta</h2>
+          </div>
+        </div>
+
+        <!-- Botones dinámicos de acción del reporte -->
+        <div class="flex items-center gap-1.5 shrink-0 ml-4">
+          <!-- Exportar Reporte de la respuesta activa a Word (.doc compatible de manera limpia con cualquier versión de MS Word) -->
+          <button id="btn-export-word" onclick="exportActiveToWord()" class="hidden py-1.5 px-3 text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-teal-400 border border-slate-800 hover:border-teal-500/30 rounded-lg flex items-center gap-2 transition-all" title="Descargar análisis y bibliografía en formato Word compatible">
+            <i class="fa-solid fa-file-word text-blue-400"></i>
+            <span class="hidden lg:inline">Exportar Reporte (Word)</span>
+          </button>
+
+          <!-- Limpiar el área de consulta activa -->
+          <button id="btn-clear-chat" onclick="openConfirmModal()" class="hidden py-1.5 px-3 text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-amber-400 border border-slate-800 hover:border-amber-500/30 rounded-lg flex items-center gap-2 transition-all" title="Borrar historial de este chat">
+            <i class="fa-solid fa-broom text-amber-400"></i>
+            <span class="hidden lg:inline">Limpiar</span>
+          </button>
+
+          <!-- Ver fuentes consultadas -->
+          <button onclick="toggleSourcesSidebar()" class="py-1.5 px-3 text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-teal-400 border border-slate-800 hover:border-teal-500/30 rounded-lg flex items-center gap-2 transition-all">
+            <i class="fa-solid fa-book-bookmark text-teal-400"></i>
+            <span class="hidden sm:inline">Biblioteca Científica</span>
+            <span id="sources-badge" class="bg-teal-500/15 text-teal-300 px-1.5 py-0.5 rounded text-[10px] font-bold">0</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Banner de notificación de éxitos -->
+      <div id="success-banner" class="hidden mx-4 mt-4 p-3 bg-teal-950/40 border border-teal-500/30 rounded-xl flex items-start gap-3 text-xs text-teal-300 z-10 animate-fade-in shrink-0">
+        <i class="fa-solid fa-circle-check text-teal-400 mt-0.5 shrink-0"></i>
+        <div class="flex-1">
+          <p class="font-semibold text-teal-200">Operación exitosa</p>
+          <p id="success-message">Historial de consultas sincronizado correctamente.</p>
+        </div>
+        <button onclick="closeSuccess()" class="text-teal-400 hover:text-teal-200"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- Banner de notificación de errores -->
+      <div id="alert-banner" class="hidden mx-4 mt-4 p-3 bg-red-950/40 border border-red-500/30 rounded-xl flex items-start gap-3 text-xs text-red-300 z-10 animate-fade-in shrink-0">
+        <i class="fa-solid fa-circle-exclamation text-red-400 mt-0.5 shrink-0"></i>
+        <div class="flex-1">
+          <p class="font-semibold text-red-200">Notificación del sistema</p>
+          <p id="alert-message">No se pudo conectar con el motor de análisis.</p>
+        </div>
+        <button onclick="closeAlert()" class="text-red-400 hover:text-red-200"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- SECCIÓN DE CONSULTAS CON IMÁGENES DE FONDO DE AUTOINMUNIDAD TOTALMENTE VISIBLES -->
+      <div class="flex-1 relative min-h-0 overflow-hidden bg-slate-950">
+        
+        <!-- IMAGEN DE FONDO PRINCIPAL - CARGADA DINÁMICAMENTE EN JS PARA EVITAR ICONOS ROTOS EN EL IFRAME -->
+        <div id="bg-immunology-image" 
+             class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-300 z-0" 
+             style="opacity: 0.85; filter: blur(1px);">
+        </div>
+
+        <!-- TEXTURA MOLECULAR DE SOPORTE -->
+        <div class="absolute inset-0 bg-immunology-pattern opacity-25 pointer-events-none z-0"></div>
+        
+        <!-- CAPA DE GRADIENTE OPTIMIZADA PARA PERMITIR VISUALIZAR EL FONDO SIN COMPROMETER LA LECTURA -->
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/40 to-slate-950/10 pointer-events-none z-0"></div>
+
+        <!-- CONTENEDOR DESPLAZABLE DE LOS MENSAJES -->
+        <div class="absolute inset-0 overflow-y-auto p-4 md:p-6 space-y-6 z-10" id="chat-messages">
+          <!-- Renderizado dinámico -->
+        </div>
+
+        <!-- BOTÓN FLOTANTE Y PANEL DE AJUSTES DE VISUALIZACIÓN DE FONDO -->
+        <div class="absolute bottom-4 left-4 z-20 flex flex-col gap-2">
+          <!-- Panel de control de fondo (Colapsable interactivo) -->
+          <div id="bg-control-panel" class="hidden p-4 rounded-xl bg-slate-900/95 backdrop-blur-md border border-slate-800 text-xs text-slate-300 w-64 shadow-2xl space-y-3 animate-fade-in">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-1.5">
+              <span class="font-semibold text-teal-400 font-mono-code flex items-center gap-1.5">
+                <i class="fa-solid fa-sliders"></i> Ajustes de Visualización
+              </span>
+              <button onclick="toggleBgControlPanel()" class="text-slate-500 hover:text-slate-300">
+                <i class="fa-solid fa-xmark text-sm"></i>
+              </button>
+            </div>
+            
+            <!-- Slider de Opacidad de Fondo -->
+            <div class="space-y-1">
+              <div class="flex justify-between text-[11px]">
+                <span>Opacidad de la Imagen:</span>
+                <span id="opacity-val" class="text-teal-400 font-mono-code">85%</span>
+              </div>
+              <input type="range" id="opacity-slider" min="10" max="100" value="85" oninput="updateBgOpacity(this.value)" class="w-full accent-teal-500 bg-slate-800 h-1 rounded-lg appearance-none cursor-pointer">
+            </div>
+
+            <!-- Slider de Desenfoque (Blur) -->
+            <div class="space-y-1">
+              <div class="flex justify-between text-[11px]">
+                <span>Desenfoque (Blur):</span>
+                <span id="blur-val" class="text-teal-400 font-mono-code">1px</span>
+              </div>
+              <input type="range" id="blur-slider" min="0" max="10" value="1" oninput="updateBgBlur(this.value)" class="w-full accent-teal-500 bg-slate-800 h-1 rounded-lg appearance-none cursor-pointer">
+            </div>
+
+            <div class="text-[10px] text-slate-500 leading-normal border-t border-slate-800/60 pt-1.5">
+              <i class="fa-solid fa-circle-info text-teal-400 mr-1"></i> Sube la opacidad al 100% y baja el desenfoque a 0px si deseas ver la imagen con total claridad.
+            </div>
+          </div>
+
+          <!-- Botón disparador -->
+          <button onclick="toggleBgControlPanel()" class="py-2 px-3 rounded-lg bg-slate-900/95 backdrop-blur-md border border-slate-800 text-[10px] font-mono-code text-slate-300 hover:text-teal-400 flex items-center gap-1.5 transition-all shadow-lg hover:shadow-teal-500/10" title="Ajustar opacidad y desenfoque del fondo 3D">
+            <i class="fa-solid fa-palette text-teal-450"></i> Personalizar Fondo (3D)
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra fija inferior para el input de texto -->
+      <div class="p-4 border-t border-slate-900 bg-slate-950/90 backdrop-blur shrink-0 z-10">
+        <div class="max-w-4xl mx-auto relative">
+          <form id="chat-form" onsubmit="handleSendMessage(event)" class="relative">
+            <textarea id="chat-input" rows="1" placeholder="Escribe tu consulta clínica o científica (ej. ¿Cuáles son los tipos de anticuerpos antinucleares según su origen?)..." class="w-full bg-slate-900 text-slate-200 placeholder-slate-500 pl-4 pr-12 py-3 rounded-xl border border-slate-800 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none resize-none text-sm transition-all shadow-inner" onkeydown="handleKeyPress(event)"></textarea>
+            
+            <button type="submit" id="send-btn" class="absolute right-2.5 bottom-2.5 p-2 bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition-all flex items-center justify-center shadow-md">
+              <i class="fa-solid fa-paper-plane text-xs"></i>
+            </button>
+          </form>
+          <p class="text-[10px] text-slate-500 mt-1.5 text-center">
+            Este asesor provee respuestas basadas exclusivamente en las 53 fuentes oficiales del cuaderno clínico de autoinmunidad.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- CAJÓN EXCLUSIVO DE FUENTES DE LA BIBLIOTECA -->
+    <section id="sources-sidebar" class="w-80 bg-slate-900 border-l border-slate-800 flex flex-col shrink-0 transition-all duration-300 z-40 fixed inset-y-0 right-0 translate-x-full lg:translate-x-0 lg:relative hidden lg:flex h-full">
+      
+      <!-- Cabecera de la biblioteca bibliográfica -->
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/20 shrink-0">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-dna text-teal-400 text-sm"></i>
+          <h3 class="font-semibold text-xs uppercase tracking-wider text-slate-200 font-mono-code">Biblioteca de Referencia</h3>
+        </div>
+        <button onclick="toggleSourcesSidebar()" class="lg:hidden text-slate-400 hover:text-white p-1">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Contenedor de la vista previa con LA NUEVA IMAGEN Consulta.jpeg -->
+      <div class="p-3.5 bg-slate-950/60 border-b border-slate-800/80">
+        <span class="text-[9px] text-slate-500 uppercase font-mono-code font-bold block mb-2 tracking-wider">Estructura del Fondo Activo (3D)</span>
+        <div class="rounded-xl overflow-hidden border-2 border-teal-500/30 bg-slate-950 relative group shadow-[0_4px_12px_rgba(13,148,136,0.15)]">
+          <div class="w-full h-32 bg-slate-900 flex items-center justify-center overflow-hidden">
+            <img id="sidebar-preview-img"
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                 alt="Unión Antígeno-Anticuerpo" 
+                 style="display: block; min-height: 120px;">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex items-end p-2.5">
+            <div class="flex flex-col">
+              <span class="text-[10px] text-white font-semibold tracking-wide">Estructura Tridimensional</span>
+              <span class="text-[8px] text-teal-400 font-mono-code">Consulta.jpeg</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenedor de Fuentes recuperadas por RAG -->
+      <div class="flex-1 overflow-y-auto min-h-0 p-4 space-y-4" id="retrieved-sources-container">
+        <!-- Renderizado dinámico -->
+      </div>
+    </section>
+
+  </div>
+
+  <!-- MODAL DE CONFIRMACIÓN DE LIMPIEZA PERSONALIZADO -->
+  <div id="confirm-modal" class="hidden fixed inset-0 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center z-50 animate-fade-in">
+    <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl max-w-sm w-full mx-4 shadow-2xl">
+      <div class="w-12 h-12 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4 mx-auto text-amber-400">
+        <i class="fa-solid fa-broom text-lg"></i>
+      </div>
+      <h4 class="text-sm font-semibold text-white text-center mb-2">¿Limpiar la Consulta Activa?</h4>
+      <p class="text-xs text-slate-400 text-center mb-6 leading-relaxed">
+        Esta acción eliminará permanentemente todos los mensajes de este chat para iniciar una nueva consulta desde cero. Esta operación no se puede deshacer.
+      </p>
+      <div class="flex gap-3">
+        <button onclick="closeConfirmModal()" class="flex-1 py-2 px-4 rounded-xl bg-slate-800 hover:bg-slate-750 text-slate-300 font-medium text-xs transition-all">
+          Cancelar
+        </button>
+        <button onclick="executeClearActiveChat()" class="flex-1 py-2 px-4 rounded-xl bg-red-600 hover:bg-red-500 text-white font-medium text-xs transition-all shadow-lg shadow-red-900/20">
+          Sí, limpiar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS Y LÓGICA DE LA APLICACIÓN -->
+  <script>
+    // --- ESTADO GLOBAL DE LA APLICACIÓN ---
+    let conversations = [];
+    let activeConversationId = null;
+    let isGenerating = false;
+    let sidebarOpen = false;
+    let sourcesSidebarOpen = true;
+
+    // API Key de Gemini (vía ambiente)
+    const apiKey = ""; 
+
+    // --- BASE DE CONOCIMIENTO (DOCUMENTOS INDEXADOS DESDE LAS 53 FUENTES) ---
+    const AUTOIMMUNE_DATABASE = [
+      {
+        id: "doc-1",
+        title: "Guía Oficial de Fuentes en Inmunología y Reumatología",
+        shortTitle: "Guía Fuentes Oficiales",
+        citation: "Guía Fuentes Oficiales, 2024",
+        summary: "Ecosistema editorial de inmunología y reumatología clínica que abarca las 53 fuentes registradas en el cuaderno académico. JIF (Journal Impact Factor) liderado por Annual Review of Immunology, Nature Reviews Immunology, e iniciativas del Autoantibody Standardization Committee (AutoAbSC) de la IUIS/WHO para la estandarización de pruebas de laboratorio.",
+        keywords: ["fuentes", "oficiales", "jif", "impacto", "publicaciones", "autoabsc", "iuis", "who", "estandarizacion", "53"]
+      },
+      {
+        id: "doc-2",
+        title: "Guía de Práctica Clínica para el Manejo de la Artritis Reumatoide (SER)",
+        shortTitle: "GUIPCAR - SER",
+        citation: "Guía SER, 2019",
+        summary: "Guía de Práctica Clínica (GUIPCAR) elaborada por la Sociedad Española de Reumatología (SER) de las fuentes del Sistema Nacional de Salud. Enfocada en el abordaje 'Treat-to-Target' (T2T) para lograr la remisión clínica mediante el uso de FAME sintéticos (Metotrexato como primera línea) y terapias biológicas/dirigidas.",
+        keywords: ["artritis", "reumatoide", "ser", "guipcar", "fame", "metotrexato", "biologicos", "remision", "treat-to-target", "t2t"]
+      },
+      {
+        id: "doc-3",
+        title: "Mecanismos Inmunológicos en Enfermedades Autoinmunes - UNAM",
+        shortTitle: "Tesina Mecanismos UNAM",
+        citation: "Luyando M., UNAM 2020",
+        summary: "Análisis exhaustivo de los mecanismos de autoinmunidad, incluyendo la pérdida de tolerancia inmunológica por mimetismo molecular, liberación de antígenos secuestrados, neoantígenos por modificación postraduccional y disfunción de linfocitos T reguladores (Treg).",
+        keywords: ["mecanismos", "autoinmunidad", "tolerancia", "mimetismo", "molecular", "secuestrados", "neoantigenos", "treg", "unam", "luyando"]
+      },
+      {
+        id: "doc-4",
+        title: "Manejo de Pacientes con Artritis Reumatoide - GuíaSalud",
+        shortTitle: "GuíaSalud AR 2025",
+        citation: "GuíaSalud, 2025",
+        summary: "Directrices para la monitorización de toxicidad farmacológica y la optimización terapéutica. Define criterios diagnósticos tempranos, uso de índices de actividad compuesta (DAS28, SDAI, CDAI) y criterios de respuesta clínica EULAR/ACR.",
+        keywords: ["guiasalud", "artritis", "reumatoide", "das28", "sdai", "cdai", "eular", "criterios", "monitoreo", "toxicidad"]
+      },
+      {
+        id: "doc-5",
+        title: "Interpretación inicial de laboratorios en reumatología - Dr. Julián Ríos",
+        shortTitle: "Laboratorios Reumatología",
+        citation: "Ríos J., U de Antioquia",
+        summary: "Clase magistral sobre laboratorios iniciales en reumatología. Enfatiza la absoluta necesidad de no ordenar exámenes diagnósticos de forma indiscriminada ('parámetros tipo escopeta') y correlacionar siempre con la clínica. Detalla la utilidad de reactantes de fase aguda (PCR, VSG) y perfiles de autoanticuerpos.",
+        keywords: ["laboratorios", "interpretacion", "inicial", "rios", "antioquia", "clinica", "escopeta", "pcr", "vsg", "lupus"]
+      },
+      {
+        id: "doc-6",
+        title: "Evaluación de laboratorio en enfermedades reumáticas - SMIBA",
+        shortTitle: "SMIBA Lab Reumáticas",
+        citation: "Birtane M. et al., SMIBA 2017",
+        summary: "Estudio metodológico sobre biomarcadores inmunológicos. Describe el análisis de sensibilidad, especificidad y cocientes de probabilidad (Likelihood Ratio) en la interpretación de ANA, FR y anti-CCP. Advierte sobre los riesgos de falsos positivos en población sana.",
+        keywords: ["smiba", "laboratorio", "sensibilidad", "especificidad", "verosimilitud", "likelihood", "ratio", "birtane", "falsos", "positivos"]
+      },
+      {
+        id: "doc-7",
+        title: "Enfermedades reumáticas y alergias: la dualidad del sistema inmunológico",
+        shortTitle: "SciELO Alergia & Reuma",
+        citation: "Sánchez-Zuno et al., SciELO 2021",
+        summary: "Análisis de la interacción patogénica entre respuestas de hipersensibilidad alérgica (Th2, IgE) y afecciones autoinmunes de perfil Th1/Th17. Describe la inmunobiología del mastocito y los riesgos de reacciones adversas cruzadas a fármacos inmunosupresores.",
+        keywords: ["alergia", "hipersensibilidad", "scielo", "th2", "ige", "th1", "th17", "dualidad", "mastocito", "inmunosupresores"]
+      },
+      {
+        id: "doc-8",
+        title: "Enfermedades autoinmunes reumáticas: de la clínica al laboratorio",
+        shortTitle: "Dialnet Clínica y Lab",
+        citation: "Vanegas-García, Dialnet",
+        summary: "Estudio sobre la concordancia diagnóstica. Define que la presencia de autoanticuerpos es indicativa pero no patognomónica de enfermedad. Clasifica las conectivopatías según perfiles de anticuerpos nucleares extractables (anti-ENA) en el laboratorio.",
+        keywords: ["dialnet", "vanegas", "autoanticuerpos", "antigenos", "patognomonica", "ena", "conectivopatias", "concordancia"]
+      },
+      {
+        id: "doc-9",
+        title: "Tolerancia inmunológica: ¿Por qué convivimos con nuestros tejidos?",
+        shortTitle: "Tolerancia Inmunológica",
+        citation: "Garavito E. et al., Col Reuma",
+        summary: "Análisis detallado de la tolerancia central (timocitos y médula) y tolerancia periférica (anergia clonal, células T reguladoras con IL-10 y TGF-b). Describe el papel de la ignorancia clonal en el desarrollo de autoinmunidad.",
+        keywords: ["tolerancia", "central", "periferica", "anergia", "ignorancia", "clonal", "timocito", "delecion", "garavito", "iglesias"]
+      },
+      {
+        id: "doc-10",
+        title: "Interpretación del Laboratorio en Reumatología - Marcadores",
+        shortTitle: "Lab Reumatología Marcadores",
+        citation: "Abumohor P., Exámenes",
+        summary: "Clasificación clínica de biomarcadores: anticuerpos anti-DNA de doble hebra (nativo) con alta especificidad (95%) para Lupus; anticuerpos anti-ENA (Sm, RNP, Ro, La); consumo de proteínas de complemento (C3, C4) que reflejan daño tisular por inmunocomplejos.",
+        keywords: ["abumohor", "marcadores", "dna", "nativo", "especificidad", "ena", "sm", "rnp", "ro", "la", "complemento", "c3", "c4"]
+      },
+      {
+        id: "doc-11",
+        title: "Evaluating the Threshold Score for SLE Using EULAR/ACR Criteria",
+        shortTitle: "EULAR/ACR SLE Threshold",
+        citation: "Johnson S. et al., J Rheumatol 2023",
+        summary: "Evaluación clínica del puntaje umbral de los criterios de clasificación EULAR/ACR 2019 para Lupus Eritematoso Sistémico. Valida el requisito de entrada de ANA >= 1:80 por IFI en células HEp-2 y analiza el rendimiento diagnóstico del umbral estándar de 10 puntos.",
+        keywords: ["eular", "acr", "lupus", "sle", "threshold", "johnson", "criterios", "clasificacion", "umbral", "ana"]
+      },
+      {
+        id: "doc-12",
+        title: "Anticuerpos Antinucleares (ANA) - American College of Rheumatology",
+        shortTitle: "ANA - ACR Guías",
+        citation: "Yang H. et al., ACR 2025",
+        summary: "Recomendaciones de la ACR sobre pruebas de ANA mediante inmunofluorescencia indirecta (IFI) en sustrato celular HEp-2. Explica la importancia de los títulos y advierte que un 20% de individuos sanos exhibe positividad.",
+        keywords: ["acr", "ana", "inmunofluorescencia", "hep-2", "ifi", "titulos", "sanos", "cribado", "conectivopatias"]
+      },
+      {
+        id: "doc-13",
+        title: "FAQ - Standardized Nomenclature of Antinuclear Antibody HEp-2 Cell Patterns",
+        shortTitle: "ICAP ANA Patterns",
+        citation: "Consenso ICAP, 2023",
+        summary: "Consenso Internacional de Patrones de ANA (ICAP). Detalla los patrones moteados, homogéneos, nucleolares, citoplasmáticos y mitóticos, asignando códigos AC-1 a AC-28 y sus correlaciones clínicas precisas.",
+        keywords: ["icap", "patrones", "moteado", "homogeneo", "nucleolar", "citoplasmatico", "ac-1", "ac-28", "hep-2", "nomenclatura"]
+      },
+      {
+        id: "doc-14",
+        title: "ANA Negativo, Anti-dsDNA Positivo: Explicación de la Discrepancia",
+        shortTitle: "Discrepancia Serológica ANA/dsDNA",
+        citation: "Análisis Serológico, 2024",
+        summary: "Análisis fisiopatológico de la discrepancia de ANA negativo con anti-dsDNA positivo en Lupus (<2% de casos). Explicado por diferencias metodológicas (IFI con antígenos solubles perdidos vs. ELISA o Crithidia luciliae), inmunocomplejos o fases tempranas de enfermedad.",
+        keywords: ["ana", "negativo", "anti-dsdna", "positivo", "discrepancia", "lupus", "metodologia", "crithidia", "elisa", "inmunocomplejos"]
+      },
+      {
+        id: "doc-15",
+        title: "El laboratorio en Reumatología - Reactantes y Tipos de ANA",
+        shortTitle: "SER Lab Reumatología",
+        citation: "Jiménez Palop, Tratado SER",
+        summary: "Clasificación fundamental de los ANA: 1) ANA Naturales (baja afinidad, presentes en sanos/ancianos, no patógenos); 2) ANA Infecciosos (secundarios a infecciones activas, reversibles); 3) ANA Autoinmunes (asociados a patología autoinmune, persistentes).",
+        keywords: ["palop", "tratado", "ser", "naturales", "infecciosos", "autoinmunes", "persistentes", "reactantes", "vsg", "pcr"]
+      },
+      {
+        id: "doc-16",
+        title: "ICAP Update: Expansion of ANA Pattern Classification with AC-30 and AC-31",
+        shortTitle: "ICAP Update AC-30/AC-31",
+        citation: "Medipan GmbH, 2023",
+        summary: "Describe las últimas adiciones del Consenso Internacional de Patrones de ANA en el 7º Taller ICAP (2023), agregando los patrones AC-30 y AC-31 en el árbol de clasificación para diferenciar de manera precisa los finos patrones de motas nucleares y su asociación con anticuerpos anti-SS-A/Ro60.",
+        keywords: ["icap", "ac-30", "ac-31", "ro60", "ss-a", "patrones", "moteado", "fino", "estandarizacion"]
+      },
+      {
+        id: "doc-17",
+        title: "AutoAbSC.Org -- Autoantibody Standardization Committee",
+        shortTitle: "Standardization Comm.",
+        citation: "Chan E.K. et al., PubMed 2007",
+        summary: "Análisis de las actividades del Comité de Estandarización de Autoanticuerpos de la IUIS/WHO/AF/CDC, orientadas a la provisión de estándares de referencia de alta calidad internacional para autoanticuerpos nucleares, citoplasmáticos y reactividades en enfermedades reumáticas.",
+        keywords: ["autoabsc", "iuis", "who", "estandarizacion", "chan", "referencia", "autoanticuerpos"]
+      },
+      {
+        id: "doc-18",
+        title: "Nomenclature Definition of AC-29 Pattern (Anti-Scl-70)",
+        shortTitle: "AC-29 Pattern",
+        citation: "Andrade L.E.C. et al., Clin Chem Lab Med 2018",
+        summary: "Consenso formal que define el patrón de tinción AC-29, caracterizado por una inmunofluorescencia compuesta específica en interfase celular (nucleolo y moteado fino en nucleoplasma) y cromosomas mitóticos, fuertemente asociado con anticuerpos anti-DNA topoisomerasa I (Scl-70) en esclerosis sistémica.",
+        keywords: ["ac-29", "scl-70", "topoisomerasa", "andrade", "esclerosis", "mitoticos", "nucleolar"]
+      }
+    ];
+
+    // --- CARGADOR INTELIGENTE DE IMÁGENES SECUENCIALES (RESOLUCIÓN DE RUTAS CON FALLBACKS FLEXIBLES) ---
+    function initBackgroundAndPreviewImages() {
+      const bgImgEl = document.getElementById('bg-immunology-image');
+      const previewImgEl = document.getElementById('sidebar-preview-img');
+      
+      // Obtener el directorio absoluto del iframe
+      const pathSegments = window.location.pathname.split('/');
+      pathSegments.pop(); // Remover 'advisor.html'
+      const directoryPath = pathSegments.join('/');
+      const absoluteBaseUrl = window.location.protocol + "//" + window.location.host + directoryPath + "/";
+      
+      const TARGET_IMAGE_SRCS = [
+        "Consulta.jpeg",
+        "consulta.jpeg",
+        "Consulta.jpg",
+        "consulta.jpg",
+        "./Consulta.jpeg",
+        "./consulta.jpeg",
+        "./Consulta.jpg",
+        "./consulta.jpg",
+        absoluteBaseUrl + "Consulta.jpeg",
+        absoluteBaseUrl + "consulta.jpeg",
+        absoluteBaseUrl + "Consulta.jpg",
+        absoluteBaseUrl + "consulta.jpg",
+        // Respaldo de seguridad (render molecular 3D de alta definición) si el acceso local falla por completo
+        "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1200&q=80"
+      ];
+
+      let loaded = false;
+
+      function tryLoadImage(index) {
+        if (index >= TARGET_IMAGE_SRCS.length) return;
+
+        const testImg = new Image();
+        testImg.src = TARGET_IMAGE_SRCS[index];
+        testImg.onload = function() {
+          if (loaded) return;
+          loaded = true;
+
+          // Asignar fondo principal
+          if (bgImgEl) {
+            bgImgEl.style.backgroundImage = `url('${TARGET_IMAGE_SRCS[index]}')`;
+          }
+          // Asignar previsualización
+          if (previewImgEl) {
+            previewImgEl.src = TARGET_IMAGE_SRCS[index];
+          }
+        };
+        testImg.onerror = function() {
+          tryLoadImage(index + 1);
+        };
+      }
+
+      tryLoadImage(0);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initBackgroundAndPreviewImages);
+    } else {
+      initBackgroundAndPreviewImages();
+    }
+
+    // --- CONTROLES INTERACTIVOS DEL PANEL DE CONTROL DE FONDO ---
+    function toggleBgControlPanel() {
+      const panel = document.getElementById('bg-control-panel');
+      if (panel) {
+        panel.classList.toggle('hidden');
+      }
+    }
+
+    function updateBgOpacity(val) {
+      const bgImg = document.getElementById('bg-immunology-image');
+      const opacityValSpan = document.getElementById('opacity-val');
+      if (bgImg) {
+        bgImg.style.opacity = val / 100;
+      }
+      if (opacityValSpan) {
+        opacityValSpan.textContent = val + '%';
+      }
+    }
+
+    function updateBgBlur(val) {
+      const bgImg = document.getElementById('bg-immunology-image');
+      const blurValSpan = document.getElementById('blur-val');
+      if (bgImg) {
+        bgImg.style.filter = `blur(${val}px)`;
+      }
+      if (blurValSpan) {
+        blurValSpan.textContent = val + 'px';
+      }
+    }
+
+    // --- INICIALIZACIÓN DE LA APLICACIÓN ---
+    window.onload = function() {
+      let saved = null;
+      try {
+        saved = localStorage.getItem('scientific_chats');
+      } catch (e) {
+        console.warn("localStorage no disponible. Fallback a sesión de memoria activa.", e);
+      }
+
+      if (saved) {
+        try {
+          conversations = JSON.parse(saved);
+        } catch(e) {
+          console.error("Error al recuperar el historial:", e);
+        }
+      }
+
+      if (!conversations || conversations.length === 0) {
+        conversations = [
+          {
+            id: Date.now(),
+            title: "Nueva Consulta",
+            messages: []
+          }
+        ];
+        saveToLocalStorage();
+      }
+
+      if (conversations.length > 0) {
+        activeConversationId = conversations[0].id;
+      } else {
+        createNewConversation();
+      }
+
+      renderSidebar();
+      renderActiveChat();
+    };
+
+    function saveToLocalStorage() {
+      try {
+        localStorage.setItem('scientific_chats', JSON.stringify(conversations));
+      } catch (e) {
+        console.error("Fallo al escribir en el almacenamiento local por restricciones de Iframe.", e);
+      }
+    }
+
+    // --- EXPORTAR ANÁLISIS A .DOC (WORD COMPATIBLE) ---
+    function exportActiveToWord() {
+      const activeConv = conversations.find(c => c.id === activeConversationId);
+      if (!activeConv || activeConv.messages.length === 0) {
+        showErrorBanner("No hay ninguna respuesta activa para exportar.");
+        return;
+      }
+
+      const userMessages = activeConv.messages.filter(m => m.role === 'user');
+      const assistantMessages = activeConv.messages.filter(m => m.role === 'assistant');
+
+      if (assistantMessages.length === 0) {
+        showErrorBanner("No hay respuestas del asesor científico para exportar.");
+        return;
+      }
+
+      const lastUserMsg = userMessages[userMessages.length - 1]?.content || "Consulta general sobre autoinmunidad";
+      const lastAssistantMsg = assistantMessages[assistantMessages.length - 1];
+      
+      const sourceIds = lastAssistantMsg.sources || [];
+      let sourcesHtml = '';
+      
+      if (sourceIds.length > 0) {
+        sourcesHtml = `
+          <h2 style="font-family: 'Segoe UI', Calibri, Arial, sans-serif; color: #0d9488; border-bottom: 2px solid #0d9488; padding-bottom: 6px; margin-top: 30px; font-size: 14pt; text-transform: uppercase; font-weight: bold;">
+            BIBLIOTECA DE REFERENCIA BIBLIOGRÁFICA
+          </h2>
+          <p style="font-family: 'Segoe UI', Calibri, Arial, sans-serif; font-size: 10pt; color: #475569; margin-bottom: 15px; line-height: 1.5;">
+            Las siguientes fuentes de nuestro cuaderno científico (de un total de 53 fuentes oficiales de autoinmunidad) fueron indexadas y consultadas mediante el algoritmo RAG local para respaldar esta respuesta científica:
+          </p>
+        `;
+        
+        sourceIds.forEach((id, idx) => {
+          const doc = AUTOIMMUNE_DATABASE.find(d => d.id === id);
+          if (doc) {
+            sourcesHtml += `
+              <div style="font-family: 'Segoe UI', Calibri, Arial, sans-serif; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px; margin-bottom: 12px; background-color: #f8fafc;">
+                <div style="margin-bottom: 6px;">
+                  <strong style="color: #0f172a; font-size: 11pt;">[Ref ${idx + 1}] ${escapeHtml(doc.title)}</strong>
+                  <span style="font-size: 8.5pt; background-color: #e2e8f0; color: #475569; padding: 2px 6px; border-radius: 4px; margin-left: 8px;">${escapeHtml(doc.citation)}</span>
+                </div>
+                <p style="font-size: 10pt; color: #334155; margin: 4px 0 0 0; line-height: 1.45;">
+                  <strong>Evidencia Registrada:</strong> ${escapeHtml(doc.summary)}
+                </p>
+              </div>
+            `;
+          }
+        });
+      }
+
+      let bodyFormatted = lastAssistantMsg.content;
+      bodyFormatted = bodyFormatted.replace(/\*\*(.*?)\*\"/g, '<strong>$1</strong>');
+      bodyFormatted = bodyFormatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      bodyFormatted = bodyFormatted.replace(/### (.*?)\n/g, '<h4 style="color: #334155; font-family: \'Segoe UI\', Calibri, Arial, sans-serif; font-size: 11pt; margin-top: 15px; margin-bottom: 6px; font-weight: bold;">$1</h4>');
+      bodyFormatted = bodyFormatted.replace(/## (.*?)\n/g, '<h3 style="color: #0d9488; font-family: \'Segoe UI\', Calibri, Arial, sans-serif; font-size: 13pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; margin-top: 20px; margin-bottom: 10px; font-weight: bold; text-transform: uppercase;">$1</h3>');
+      bodyFormatted = bodyFormatted.replace(/^\s*-\s+(.*?)$/gm, '<li style="font-family: \'Segoe UI\', Calibri, Arial, sans-serif; font-size: 10pt; color: #334155; margin-left: 20px; margin-bottom: 4px;">$1</li>');
+      bodyFormatted = bodyFormatted.replace(/^\s*\d+\.\s+(.*?)$/gm, '<li style="font-family: \'Segoe UI\', Calibri, Arial, sans-serif; font-size: 10pt; color: #334155; margin-left: 20px; margin-bottom: 4px;">$1</li>');
+
+      let lines = bodyFormatted.split('\n');
+      let inTable = false;
+      let tableHtml = '';
+      let resultLines = [];
+
+      for (let i = 0; i < lines.length; i++) {
+        let line = lines[i].trim();
+        if (line.startsWith('|') && line.endsWith('|')) {
+          if (!inTable) {
+            inTable = true;
+            tableHtml = '<table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-family: \'Segoe UI\', Calibri, Arial, sans-serif; font-size: 9pt; border: 1px solid #cbd5e1;">';
+            let cols = line.split('|').map(c => c.trim()).filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
+            tableHtml += '<thead style="background-color: #0f172a; color: #ffffff;"><tr>';
+            cols.forEach(col => {
+              tableHtml += `<th style="padding: 10px; border: 1px solid #cbd5e1; text-align: left; font-weight: bold; text-transform: uppercase; font-size: 8.5pt;">${col}</th>`;
+            });
+            tableHtml += '</tr></thead><tbody style="background-color: #fdfdfd;">';
+            
+            if (i + 1 < lines.length && lines[i+1].trim().startsWith('|') && lines[i+1].includes('-')) {
+              i++;
+            }
+          } else {
+            let cols = line.split('|').map(c => c.trim()).filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
+            tableHtml += '<tr>';
+            cols.forEach(col => {
+              tableHtml += `<td style="padding: 8px; border: 1px solid #cbd5e1; color: #334155; line-height: 1.4;">${col}</td>`;
+            });
+            tableHtml += '</tr>';
+          }
+        } else {
+          if (inTable) {
+            inTable = false;
+            tableHtml += '</tbody></table>';
+            resultLines.push(tableHtml);
+            tableHtml = '';
+          }
+          resultLines.push(lines[i]);
+        }
+      }
+
+      if (inTable) {
+        tableHtml += '</tbody></table>';
+        resultLines.push(tableHtml);
+      }
+
+      bodyFormatted = resultLines.join('<br/>');
+      bodyFormatted = bodyFormatted.replace(/\$\$(.*?)\$\$/gs, '<div style="background-color: #f8fafc; border-left: 3px solid #0d9488; padding: 10px; margin: 10px 0; font-family: Consolas, \'Courier New\', monospace; text-align: center; color: #0d9488; font-size: 9.5pt;">$1</div>');
+      bodyFormatted = bodyFormatted.replace(/\$(.*?)\$/g, '<code style="background-color: #f1f5f9; color: #0d9488; padding: 2px 4px; border-radius: 4px; font-family: Consolas, \'Courier New\', monospace; font-size: 9.5pt; border: 1px solid #e2e8f0;">$1</code>');
+
+      const docHtml = `
+        <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+        <head>
+          <meta charset="utf-8">
+          <title>Reporte Científico de Autoinmunidad</title>
+          <!--[if gte mso 9]>
+          <xml>
+            <w:WordDocument>
+              <w:View>Print</w:View>
+              <w:Zoom>100</w:Zoom>
+              <w:DoNotOptimizeForBrowser/>
+            </w:WordDocument>
+          </xml>
+          <![endif]-->
+          <style>
+            @page WordSection1 {
+              size: 21.0cm 29.7cm;
+              margin: 2.5cm 2.5cm 2.5cm 2.5cm;
+              mso-header-margin: 35.4pt;
+              mso-footer-margin: 35.4pt;
+              mso-paper-source: 0;
+            }
+            div.WordSection1 {
+              page: WordSection1;
+            }
+            body { font-family: 'Segoe UI', Calibri, Arial, sans-serif; line-height: 1.6; color: #1e293b; }
+            p { margin: 0 0 10pt 0; font-size: 10.5pt; line-height: 1.6; }
+          </style>
+        </head>
+        <body style="padding: 20px;">
+          <div class="WordSection1">
+            <div style="border-bottom: 3px solid #0d9488; padding-bottom: 10px; margin-bottom: 20px;">
+              <table style="width: 100%; border: none; border-collapse: collapse;">
+                <tr>
+                  <td style="padding: 0; text-align: left; vertical-align: middle;">
+                    <h1 style="color: #0f172a; font-family: 'Segoe UI', Calibri, Arial, sans-serif; margin: 0 0 2px 0; font-size: 16pt; text-transform: uppercase; font-weight: bold;">
+                      REPORTE CIENTÍFICO DE AUTOINMUNIDAD
+                    </h1>
+                    <span style="font-size: 8.5pt; color: #64748b; font-family: 'Segoe UI', Calibri, Arial, sans-serif; font-weight: 500;">
+                      SISTEMA DE ASESORÍA CLÍNICA DE ALTO NIVEL &bull; By Huguin
+                    </span>
+                  </td>
+                  <td style="padding: 0; text-align: right; vertical-align: middle;">
+                    <span style="font-size: 8.5pt; color: #0d9488; font-family: 'Segoe UI', Calibri, Arial, sans-serif; font-weight: bold; text-transform: uppercase;">
+                      Fecha: ${new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+                    </span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div style="background-color: #f8fafc; padding: 14px; border-radius: 8px; border-left: 4px solid #0f172a; margin-bottom: 25px; font-family: 'Segoe UI', Calibri, Arial, sans-serif;">
+              <strong style="color: #0f172a; font-size: 9.5pt; text-transform: uppercase;">CONSULTA DEL ESPECIALISTA:</strong>
+              <p style="margin: 6px 0 0 0; font-size: 10.5pt; color: #334155; font-style: italic; line-height: 1.5;">
+                "${escapeHtml(lastUserMsg)}"
+              </p>
+            </div>
+
+            <h2 style="font-family: 'Segoe UI', Calibri, Arial, sans-serif; color: #0f172a; border-bottom: 2px solid #0f172a; padding-bottom: 6px; margin-bottom: 15px; font-size: 13pt; text-transform: uppercase; font-weight: bold;">
+              ANÁLISIS INMUNOBIOLÓGICO Y CLÍNICO
+            </h2>
+            <div style="font-family: 'Segoe UI', Calibri, Arial, sans-serif; font-size: 10.5pt; line-height: 1.6; color: #1e293b;">
+              ${bodyFormatted}
+            </div>
+
+            ${sourcesHtml}
+
+            <div style="margin-top: 50px; border-top: 1px solid #cbd5e1; padding-top: 12px; text-align: center; font-family: 'Segoe UI', Calibri, Arial, sans-serif; font-size: 8pt; color: #94a3b8;">
+              Este reporte ha sido emitido de manera computacional como una revisión de la literatura oficial, no representa indicaciones médicas de diagnóstico definitivas sin confirmación clínica.
+            </div>
+          </div>
+        </body>
+        </html>
+      `;
+
+      // Exportación en formato compatible (.doc) para que Word lo abra nativamente y sin errores
+      const blob = new Blob(['\ufeff' + docHtml], { type: 'application/msword' });
+      const url = URL.createObjectURL(blob);
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.href = url;
+      
+      const cleanTitle = activeConv.title.replace(/[^a-zA-Z0-9]/g, "_").substring(0, 30);
+      downloadAnchor.download = `reporte_autoinmuno_${cleanTitle}.doc`;
+      
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+      URL.revokeObjectURL(url);
+
+      showSuccessBanner("Se ha generado y descargado con éxito el reporte para Microsoft Word de forma segura.");
+    }
+
+    // --- SISTEMA DE LIMPIEZA INTEGRADO ---
+    function openConfirmModal() {
+      const activeConv = conversations.find(c => c.id === activeConversationId);
+      if (!activeConv || activeConv.messages.length === 0) {
+        showErrorBanner("El espacio de trabajo ya se encuentra vacío.");
+        return;
+      }
+      document.getElementById('confirm-modal').classList.remove('hidden');
+    }
+
+    function closeConfirmModal() {
+      document.getElementById('confirm-modal').classList.add('hidden');
+    }
+
+    function executeClearActiveChat() {
+      const activeConv = conversations.find(c => c.id === activeConversationId);
+      if (activeConv) {
+        activeConv.messages = [];
+        saveToLocalStorage();
+        renderActiveChat();
+        closeConfirmModal();
+        showSuccessBanner("Área de investigación despejada. Listo para la siguiente consulta.");
+      }
+    }
+
+    // --- MOTOR DE BÚSQUEDA RAG LOCAL ---
+    function searchSources(query) {
+      const stopWords = new Set([
+        "de", "la", "que", "el", "en", "y", "a", "los", "del", "un", "una", "con", "para", "como", "sobre", "este", "esta", "se", "por", "sus", "su", "las", "o", "es", "son", "al"
+      ]);
+      
+      const queryWords = query.toLowerCase()
+        .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()¿?]/g, "")
+        .split(/\s+/)
+        .filter(w => w.length > 2 && !stopWords.has(w));
+
+      let scoredDocs = AUTOIMMUNE_DATABASE.map(doc => {
+        let score = 0;
+        
+        queryWords.forEach(word => {
+          if (doc.title.toLowerCase().includes(word)) score += 8;
+          if (doc.summary.toLowerCase().includes(word)) score += 3;
+          
+          doc.keywords.forEach(keyword => {
+            if (keyword.toLowerCase() === word) score += 5;
+            else if (keyword.toLowerCase().includes(word)) score += 2;
+          });
+        });
+
+        return { ...doc, score };
+      });
+
+      scoredDocs = scoredDocs.sort((a, b) => b.score - a.score).filter(doc => doc.score > 0);
+      
+      if (scoredDocs.length === 0) {
+        return AUTOIMMUNE_DATABASE.slice(0, 3);
+      }
+      
+      return scoredDocs.slice(0, 4);
+    }
+
+    // --- RENDERIZADO DE LA INTERFAZ ---
+
+    function renderSidebar() {
+      const listContainer = document.getElementById('conversations-list');
+      listContainer.innerHTML = '';
+
+      conversations.forEach(conv => {
+        const isActive = conv.id === activeConversationId;
+        
+        const item = document.createElement('div');
+        item.className = `group relative mx-2 py-2 px-3.5 rounded-xl flex items-center justify-between gap-2 cursor-pointer transition-all ${
+          isActive 
+            ? 'bg-teal-500/10 border border-teal-500/30 text-white' 
+            : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+        }`;
+        
+        item.setAttribute('onclick', `selectConversation(${conv.id}, event)`);
+
+        item.innerHTML = `
+          <div class="flex items-center gap-2.5 overflow-hidden flex-1">
+            <i class="fa-regular fa-comment text-xs ${isActive ? 'text-teal-400' : 'text-slate-500 group-hover:text-slate-400'} shrink-0"></i>
+            
+            <div class="flex-1 overflow-hidden">
+              <span id="title-text-${conv.id}" class="text-xs font-medium truncate block">${escapeHtml(conv.title)}</span>
+              <input id="title-input-${conv.id}" type="text" value="${escapeHtml(conv.title)}" 
+                     class="hidden w-full bg-slate-950 text-white text-xs px-2 py-1 rounded border border-teal-500 focus:outline-none"
+                     onclick="event.stopPropagation()"
+                     onkeydown="handleTitleKeydown(event, ${conv.id})">
+            </div>
+          </div>
+
+          <div class="flex items-center gap-1 shrink-0">
+            <button id="edit-btn-${conv.id}" onclick="startEditTitle(${conv.id}, event)" 
+                    class="opacity-0 group-hover:opacity-100 p-1 text-slate-500 hover:text-teal-400 transition-all rounded">
+              <i class="fa-solid fa-pen text-[10px]"></i>
+            </button>
+            <button id="save-btn-${conv.id}" onclick="saveEditTitle(${conv.id}, event)" 
+                    class="hidden p-1 text-teal-400 hover:text-teal-300 transition-all rounded">
+              <i class="fa-solid fa-check text-[10px]"></i>
+            </button>
+            <button onclick="deleteConversation(${conv.id}, event)" 
+                    class="opacity-0 group-hover:opacity-100 p-1 text-slate-500 hover:text-red-400 transition-all rounded">
+              <i class="fa-regular fa-trash-can text-[10px]"></i>
+            </button>
+          </div>
+        `;
+
+        listContainer.appendChild(item);
+      });
+    }
+
+    function renderActiveChat() {
+      const activeConv = conversations.find(c => c.id === activeConversationId);
+      const chatMessagesContainer = document.getElementById('chat-messages');
+      const activeTitleHeader = document.getElementById('active-chat-title');
+      const sourcesBadge = document.getElementById('sources-badge');
+      
+      const btnExportWord = document.getElementById('btn-export-word');
+      const btnClearChat = document.getElementById('btn-clear-chat');
+
+      if (!activeConv) {
+        activeTitleHeader.textContent = "Sin selección";
+        sourcesBadge.textContent = "0";
+        if (btnExportWord) btnExportWord.classList.add('hidden');
+        if (btnClearChat) btnClearChat.classList.add('hidden');
+        renderEmptyState();
+        return;
+      }
+
+      activeTitleHeader.textContent = activeConv.title;
+      chatMessagesContainer.innerHTML = '';
+
+      if (activeConv.messages.length === 0) {
+        sourcesBadge.textContent = "0";
+        if (btnExportWord) btnExportWord.classList.add('hidden');
+        if (btnClearChat) btnClearChat.classList.add('hidden');
+        renderEmptyState();
+        return;
+      }
+
+      if (btnExportWord) btnExportWord.classList.remove('hidden');
+      if (btnClearChat) btnClearChat.classList.remove('hidden');
+
+      activeConv.messages.forEach((msg, idx) => {
+        const isUser = msg.role === 'user';
+        const messageBlock = document.createElement('div');
+        
+        if (isUser) {
+          messageBlock.className = "flex gap-4 max-w-3xl ml-auto bg-slate-900 border border-slate-850 p-4 rounded-2xl shadow-lg text-slate-100 animate-fade-in relative z-10";
+          messageBlock.innerHTML = `
+            <div class="flex-1 text-sm leading-relaxed">${escapeHtml(msg.content)}</div>
+            <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-user-doctor text-slate-400 text-sm"></i>
+            </div>
+          `;
+        } else {
+          messageBlock.className = "flex gap-4 max-w-4xl mr-auto p-4 rounded-2xl bg-slate-950/90 backdrop-blur-md border border-slate-900/60 text-slate-100 animate-fade-in relative z-10";
+          messageBlock.innerHTML = `
+            <div class="w-8 h-8 rounded-full bg-teal-500/10 border border-teal-500/30 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-robot text-teal-400 text-sm"></i>
+            </div>
+            <div class="flex-1 space-y-4 min-w-0">
+              <div class="text-xs font-mono-code text-teal-400 font-medium">Asesor Científico</div>
+              <div class="text-sm leading-relaxed text-slate-300 markdown-content overflow-hidden">${renderMarkdown(msg.content)}</div>
+            </div>
+          `;
+        }
+        chatMessagesContainer.appendChild(messageBlock);
+      });
+
+      const assistantMessages = activeConv.messages.filter(m => m.role === 'assistant');
+      if (assistantMessages.length > 0) {
+        const lastAssistantMsg = assistantMessages[assistantMessages.length - 1];
+        const sourceIds = lastAssistantMsg.sources || [];
+        sourcesBadge.textContent = sourceIds.length;
+        renderRetrievedSources(sourceIds);
+      } else {
+        sourcesBadge.textContent = "0";
+        renderRetrievedSources([]);
+      }
+
+      chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+    }
+
+    function renderEmptyState() {
+      const chatMessagesContainer = document.getElementById('chat-messages');
+      chatMessagesContainer.innerHTML = `
+        <div class="h-full flex flex-col items-center justify-center max-w-2xl mx-auto text-center px-4 py-12 relative z-10">
+          <div class="w-16 h-16 rounded-2xl bg-teal-500/5 border border-teal-500/15 flex items-center justify-center mb-6 pulse-glow-teal">
+            <i class="fa-solid fa-vial-reagent text-2xl text-teal-400"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-slate-200 mb-2">Comienza una consulta científica</h3>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-md">
+            Realiza preguntas basadas en el manual de autoinmunidad, pruebas de laboratorio e interpretación clínica de conectivopatías. El sistema revisará el material del cuaderno y proveerá una respuesta de alta precisión científica referenciada.
+          </p>
+        </div>
+      `;
+      renderRetrievedSources([]);
+    }
+
+    function renderRetrievedSources(sourceIds) {
+      const container = document.getElementById('retrieved-sources-container');
+      container.innerHTML = '';
+
+      if (sourceIds.length === 0) {
+        container.innerHTML = `
+          <div class="h-48 flex flex-col items-center justify-center text-center text-slate-500 border border-dashed border-slate-800 rounded-xl p-4">
+            <i class="fa-solid fa-inbox text-lg mb-2 text-slate-600"></i>
+            <span class="text-[11px]">No hay fuentes de referencia cargadas para esta consulta</span>
+          </div>
+        `;
+        return;
+      }
+
+      sourceIds.forEach(id => {
+        const doc = AUTOIMMUNE_DATABASE.find(d => d.id === id);
+        if (!doc) return;
+
+        const card = document.createElement('div');
+        card.className = "bg-slate-950/40 border border-slate-800 p-3.5 rounded-xl space-y-2 hover:border-teal-500/20 transition-all";
+        card.innerHTML = `
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-[10px] font-bold text-teal-400 uppercase font-mono-code shrink-0">${escapeHtml(doc.shortTitle)}</span>
+            <span class="text-[9px] bg-slate-900 text-slate-400 py-0.5 px-2 rounded-full border border-slate-800">${escapeHtml(doc.citation)}</span>
+          </div>
+          <h4 class="text-xs font-semibold text-slate-200">${escapeHtml(doc.title)}</h4>
+          <p class="text-[11px] text-slate-400 leading-relaxed">${escapeHtml(doc.summary)}</p>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // --- ACCIONES DE CONVERSACIÓN ---
+
+    function createNewConversation() {
+      const newConv = {
+        id: Date.now(),
+        title: "Nueva Consulta",
+        messages: []
+      };
+      conversations.unshift(newConv);
+      activeConversationId = newConv.id;
+      saveToLocalStorage();
+      renderSidebar();
+      renderActiveChat();
+    }
+
+    function selectConversation(id, event) {
+      if (document.getElementById(`title-input-${id}`).classList.contains('hidden')) {
+        activeConversationId = id;
+        renderSidebar();
+        renderActiveChat();
+        
+        if (window.innerWidth < 768) {
+          toggleSidebar();
+        }
+      }
+    }
+
+    function startEditTitle(id, event) {
+      event.stopPropagation();
+      const textSpan = document.getElementById(`title-text-${id}`);
+      const textInput = document.getElementById(`title-input-${id}`);
+      const editBtn = document.getElementById(`edit-btn-${id}`);
+      const saveBtn = document.getElementById(`save-btn-${id}`);
+
+      textSpan.classList.add('hidden');
+      textInput.classList.remove('hidden');
+      textInput.focus();
+      
+      editBtn.classList.add('hidden');
+      saveBtn.classList.remove('hidden');
+    }
+
+    function saveEditTitle(id, event) {
+      if (event) event.stopPropagation();
+      const textSpan = document.getElementById(`title-text-${id}`);
+      const textInput = document.getElementById(`title-input-${id}`);
+      const editBtn = document.getElementById(`edit-btn-${id}`);
+      const saveBtn = document.getElementById(`save-btn-${id}`);
+
+      const newTitle = textInput.value.trim();
+      if (newTitle) {
+        const conv = conversations.find(c => c.id === id);
+        if (conv) {
+          conv.title = newTitle;
+          saveToLocalStorage();
+        }
+      }
+
+      textSpan.classList.remove('hidden');
+      textInput.classList.add('hidden');
+      
+      editBtn.classList.remove('hidden');
+      saveBtn.classList.add('hidden');
+
+      renderSidebar();
+      if (id === activeConversationId) {
+        document.getElementById('active-chat-title').textContent = newTitle;
+      }
+    }
+
+    function handleTitleKeydown(event, id) {
+      if (event.key === 'Enter') {
+        saveEditTitle(id, event);
+      } else if (event.key === 'Escape') {
+        const textSpan = document.getElementById(`title-text-${id}`);
+        const textInput = document.getElementById(`title-input-${id}`);
+        const editBtn = document.getElementById(`edit-btn-${id}`);
+        const saveBtn = document.getElementById(`save-btn-${id}`);
+
+        textSpan.classList.remove('hidden');
+        textInput.classList.add('hidden');
+        textInput.value = textSpan.textContent;
+        editBtn.classList.remove('hidden');
+        saveBtn.classList.add('hidden');
+      }
+    }
+
+    function deleteConversation(id, event) {
+      event.stopPropagation();
+      conversations = conversations.filter(c => c.id !== id);
+      saveToLocalStorage();
+      
+      if (activeConversationId === id) {
+        activeConversationId = conversations.length > 0 ? conversations[0].id : null;
+      }
+      
+      renderSidebar();
+      renderActiveChat();
+    }
+
+    function handleKeyPress(event) {
+      if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        handleSendMessage(event);
+      }
+    }
+
+    // --- CONEXIÓN AL MOTOR GEMINI API DE GOOGLE ---
+
+    async function handleSendMessage(event) {
+      if (event) event.preventDefault();
+      
+      const input = document.getElementById('chat-input');
+      const text = input.value.trim();
+      if (!text || isGenerating) return;
+
+      const activeConv = conversations.find(c => c.id === activeConversationId);
+      if (!activeConv) return;
+
+      activeConv.messages.push({
+        role: 'user',
+        content: text
+      });
+
+      if (activeConv.title === "Nueva Consulta") {
+        activeConv.title = text.length > 30 ? text.substring(0, 30) + '...' : text;
+      }
+
+      input.value = '';
+      saveToLocalStorage();
+      renderSidebar();
+      renderActiveChat();
+
+      const matchedSources = searchSources(text);
+      const sourceIds = matchedSources.map(s => s.id);
+      
+      isGenerating = true;
+      const chatMessagesContainer = document.getElementById('chat-messages');
+      const loadingBlock = document.createElement('div');
+      loadingBlock.id = "gemini-loading-indicator";
+      loadingBlock.className = "flex gap-4 max-w-4xl mr-auto p-4 rounded-2xl bg-slate-950/80 backdrop-blur-sm border border-slate-900/50 text-slate-100 animate-pulse relative z-10";
+      loadingBlock.innerHTML = `
+        <div class="w-8 h-8 rounded-full bg-teal-500/10 border border-teal-500/30 flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-spinner animate-spin text-teal-400 text-sm"></i>
+        </div>
+        <div class="flex-1 space-y-3">
+          <div class="text-xs font-mono-code text-teal-400 font-medium">Asesor Científico</div>
+          <div class="space-y-2">
+            <div class="h-3 bg-slate-800 rounded w-1/3"></div>
+            <div class="h-3 bg-slate-800 rounded w-5/6"></div>
+            <div class="h-3 bg-slate-800 rounded w-4/5"></div>
+          </div>
+          <div class="text-[10px] text-teal-400/80 font-mono-code">Consultando base de referencia del cuaderno de autoinmunidad...</div>
+        </div>
+      `;
+      chatMessagesContainer.appendChild(loadingBlock);
+      chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+
+      const systemPrompt = `Eres el Asesor Científico Experto en Autoinmunidad, Inmunología y Reumatología Clínica.
+Tu objetivo es responder de manera sumamente formal, rigurosa, exhaustiva y académica a las consultas de profesionales de la salud.
+Debes responder de forma coherente utilizando los fragmentos de las fuentes del cuaderno clínico que te proporcionamos a continuación.
+
+REGLAS DE FORMATO Y ESTILO:
+1. Presenta los datos complejos en forma de TABLAS de Markdown si la consulta lo requiere para facilitar la comparación rápida.
+2. Respeta el rigor científico. Si utilizas fórmulas o conceptos bioquímicos específicos, exprésalos utilizando notación LaTeX para fórmulas en línea ($...$) o destacadas ($$...$$).
+3. Es obligatorio e indispensable que cites explícitamente las fuentes del cuaderno al final de tus explicaciones o integradas en el texto usando su formato de citación académica (ej. "[Guía SER, 2019]", "[Consenso ICAP, 2023]").
+4. Explica la correlación fisiopatológica, diagnóstica y terapéutica fundamentando tus argumentos en los fragmentos proveídos.
+5. Recuerda que la interpretación de autoanticuerpos aislados nunca reemplaza el juicio clínico o criterios de clasificación sistémica (como EULAR/ACR). Enfatiza este aspecto.
+
+FUENTES DISPONIBLES EN EL CUADERNO PARA ESTA PREGUNTA:
+${matchedSources.map((doc, idx) => `[Referencia ${idx + 1}]:
+Título: ${doc.title}
+Cita: ${doc.citation}
+Resumen/Snippet: ${doc.summary}`).join('\n\n')}`;
+
+      try {
+        const responseText = await callGeminiAPI(text, systemPrompt);
+        
+        const loadingEl = document.getElementById('gemini-loading-indicator');
+        if (loadingEl) loadingEl.remove();
+
+        activeConv.messages.push({
+          role: 'assistant',
+          content: responseText,
+          sources: sourceIds
+        });
+
+        saveToLocalStorage();
+        renderActiveChat();
+
+      } catch (error) {
+        console.error("Gemini API Error:", error);
+        
+        const loadingEl = document.getElementById('gemini-loading-indicator');
+        if (loadingEl) loadingEl.remove();
+
+        showErrorBanner("Error al consultar el motor de análisis: " + error.message);
+      } finally {
+        isGenerating = false;
+      }
+    }
+
+    async function callGeminiAPI(userQuery, systemPrompt) {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+      
+      const payload = {
+        contents: [
+          { parts: [{ text: userQuery }] }
+        ],
+        systemInstruction: {
+          parts: [{ text: systemPrompt }]
+        }
+      };
+
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      };
+
+      return await fetchWithRetry(url, options, 5, 1000);
+    }
+
+    async function fetchWithRetry(url, options, retries = 5, delay = 1000) {
+      try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+          throw new Error(`Código de estado HTTP: ${response.status}`);
+        }
+        const data = await response.json();
+        
+        const generatedText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (!generatedText) {
+          throw new Error("Respuesta del motor vacía.");
+        }
+        return generatedText;
+      } catch (error) {
+        if (retries > 1) {
+          await new Promise(resolve => setTimeout(resolve, delay));
+          return fetchWithRetry(url, options, retries - 1, delay * 2);
+        } else {
+          throw error;
+        }
+      }
+    }
+
+    // --- UTILIDADES ---
+
+    function showErrorBanner(msg) {
+      const banner = document.getElementById('alert-banner');
+      const messageSpan = document.getElementById('alert-message');
+      messageSpan.textContent = msg;
+      banner.classList.remove('hidden');
+    }
+
+    function closeAlert() {
+      document.getElementById('alert-banner').classList.add('hidden');
+    }
+
+    function showSuccessBanner(msg) {
+      const banner = document.getElementById('success-banner');
+      const messageSpan = document.getElementById('success-message');
+      messageSpan.textContent = msg;
+      banner.classList.remove('hidden');
+      setTimeout(() => {
+        banner.classList.add('hidden');
+      }, 5000);
+    }
+
+    function closeSuccess() {
+      document.getElementById('success-banner').classList.add('hidden');
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+    }
+
+    function renderMarkdown(md) {
+      if (!md) return '';
+      
+      let lines = md.split('\n');
+      let inTable = false;
+      let tableHtml = '';
+      let resultLines = [];
+      
+      for (let i = 0; i < lines.length; i++) {
+        let line = lines[i].trim();
+        
+        if (line.startsWith('|') && line.endsWith('|')) {
+          if (!inTable) {
+            inTable = true;
+            tableHtml = '<div class="overflow-x-auto my-5 border border-slate-800 rounded-xl shadow-lg shadow-black/30"><table class="w-full text-left border-collapse text-xs">';
+            
+            let cols = line.split('|').map(c => c.trim()).filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
+            tableHtml += '<thead class="bg-slate-900/90 border-b border-slate-800 text-teal-400 font-semibold font-mono-code"><tr>';
+            cols.forEach(col => {
+              tableHtml += `<th class="p-3.5 tracking-wider uppercase text-[10px]">${col}</th>`;
+            });
+            tableHtml += '</tr></thead><tbody class="divide-y divide-slate-900 bg-slate-950/40">';
+            
+            if (i + 1 < lines.length && lines[i+1].trim().startsWith('|') && lines[i+1].includes('-')) {
+              i++;
+            }
+          } else {
+            let cols = line.split('|').map(c => c.trim()).filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
+            tableHtml += '<tr class="hover:bg-slate-900/30 transition-colors duration-150">';
+            cols.forEach(col => {
+              tableHtml += `<td class="p-3 text-slate-300 font-sans border-b border-slate-900/40 leading-relaxed">${col}</td>`;
+            });
+            tableHtml += '</tr>';
+          }
+        } else {
+          if (inTable) {
+            inTable = false;
+            tableHtml += '</tbody></table></div>';
+            resultLines.push(tableHtml);
+            tableHtml = '';
+          }
+          resultLines.push(lines[i]);
+        }
+      }
+      
+      if (inTable) {
+        tableHtml += '</tbody></table></div>';
+        resultLines.push(tableHtml);
+      }
+      
+      let html = resultLines.join('\n');
+
+      html = html.replace(/\$\.(.*?)\$\./gs, '<div class="bg-slate-900 border-l-2 border-teal-500 p-3 my-3 text-center text-teal-300 font-mono-code text-xs overflow-x-auto">$1</div>');
+      html = html.replace(/\$\$/gs, '<div class="bg-slate-900 border-l-2 border-teal-500 p-3 my-3 text-center text-teal-300 font-mono-code text-xs overflow-x-auto">$1</div>');
+      html = html.replace(/\$(.*?)\$/g, '<code class="bg-slate-900 text-teal-300 px-1.5 py-0.5 rounded font-mono-code text-[11px] border border-slate-800">$1</code>');
+
+      html = html.replace(/### (.*?)\n/g, '<h4 class="text-sm font-semibold text-teal-400 mt-4 mb-2">$1</h4>');
+      html = html.replace(/## (.*?)\n/g, '<h3 class="text-base font-semibold text-teal-300 mt-5 mb-2 border-b border-slate-900 pb-1">$1</h3>');
+
+      html = html.replace(/\*\*(.*?)\*\"/g, '<strong class="font-bold text-white">$1</strong>');
+      html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-white">$1</strong>');
+
+      html = html.replace(/^\s*-\s+(.*?)$/gm, '<li class="ml-4 list-disc text-slate-300 mb-1 text-xs">$1</li>');
+      html = html.replace(/^\s*\d+\.\s+(.*?)$/gm, '<li class="ml-4 list-decimal text-slate-300 mb-1 text-xs">$1</li>');
+
+      html = html.replace(/\n/g, '<br>');
+
+      html = html.replace(/(<(?:table|thead|tbody|tr|th|td|div)[^>]*>)<br>/gi, '$1');
+      html = html.replace(/<br>(<\/(?:table|thead|tbody|tr|th|td|div)>)/gi, '$1');
+
+      return html;
+    }
+
+    // --- CONTROLES DE COMPONENTES INTERACTIVOS (DRAWER/SIDEBARS) ---
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebarOpen = !sidebarOpen;
+      if (sidebarOpen) {
+        sidebar.classList.remove('-translate-x-full');
+      } else {
+        sidebar.classList.add('-translate-x-full');
+      }
+    }
+
+    function toggleSourcesSidebar() {
+      const sourcesDrawer = document.getElementById('sources-sidebar');
+      sourcesSidebarOpen = !sourcesSidebarOpen;
+      if (sourcesSidebarOpen) {
+        sourcesDrawer.classList.remove('hidden');
+        sourcesDrawer.classList.remove('translate-x-full');
+      } else {
+        sourcesDrawer.classList.add('hidden');
+        sourcesDrawer.classList.add('translate-x-full');
+      }
+    }
+  </script>
+</body>
+</html>
