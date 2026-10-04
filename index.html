@@ -1447,35 +1447,26 @@ Resumen/Snippet: ${doc.summary}`).join('\n\n')}`;
     }
 
     async function fetchFromGemini(modelName, userQuery, systemPrompt, activeKey) {
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${activeKey}`;
-      
-      const payload = {
-        contents: [{ parts: [{ text: userQuery }] }],
-        systemInstruction: { parts: [{ text: systemPrompt }] }
-      };
-
-      const options = {
+    const response = await fetch("https://asesor-autoinmunidad.vercel.app/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      };
+        body: JSON.stringify({
+            message: userQuery,
+            systemInstruction: systemPrompt
+        })
+    });
 
-      const response = await fetch(url, options);
-      if (response.status === 404 || response.status === 403) {
-        throw new Error(`Modelo no disponible o restringido (${response.status})`);
-      }
-      if (!response.ok) {
-        throw new Error(`Error de conexión HTTP (${response.status})`);
-      }
-
-      const data = await response.json();
-      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (!text) {
-        throw new Error("Respuesta vacía del servidor.");
-      }
-      return text;
+    if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || `Error del servidor HTTP (${response.status})`);
     }
 
+    const data = await response.json();
+    if (!data.text) {
+        throw new Error("Respuesta vacía del servidor.");
+    }
+    return data.text;
+}
     function saveEditTitle(id, event) {
       if (event) event.stopPropagation();
       const textSpan = document.getElementById(`title-text-${id}`);
