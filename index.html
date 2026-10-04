@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es">7
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -235,12 +235,7 @@
 
         <!-- Botones de acción del reporte -->
         <div class="flex items-center gap-1.5 shrink-0 ml-4">
-          <!-- Configuración de API Key de Gemini -->
-          <button onclick="openApiKeyModal()" class="py-1.5 px-3 text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-teal-400 border border-slate-800 hover:border-teal-500/30 rounded-lg flex items-center gap-2 transition-all" title="Configurar conexión con la Inteligencia Artificial">
-            <i class="fa-solid fa-key text-teal-400"></i>
-            <span class="hidden sm:inline">Clave IA</span>
-          </button>
-
+          
           <!-- Exportar Reporte de la respuesta activa a Word -->
           <button id="btn-export-word" onclick="exportActiveToWord()" class="hidden py-1.5 px-3 text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-teal-400 border border-slate-800 hover:border-teal-500/30 rounded-lg flex items-center gap-2 transition-all" title="Descargar análisis y bibliografía en formato Word compatible">
             <i class="fa-solid fa-file-word text-blue-400"></i>
@@ -1333,13 +1328,7 @@
       const text = input.value.trim();
       if (!text || isGenerating) return;
 
-      const currentKey = getApiKey();
-      if (!currentKey || currentKey === "") {
-        openApiKeyModal();
-        return;
-      }
-
-      const activeConv = conversations.find(c => c.id === activeConversationId);
+           const activeConv = conversations.find(c => c.id === activeConversationId);
       if (!activeConv) return;
 
       activeConv.messages.push({
